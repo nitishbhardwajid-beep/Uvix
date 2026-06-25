@@ -1,0 +1,806 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Uvix Technologies — Intelligent IT Services</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy:    #050B18;
+      --navy-2:  #0D1627;
+      --navy-3:  #131E35;
+      --indigo:  #4F46E5;
+      --indigo-l:#6366F1;
+      --cyan:    #06B6D4;
+      --cyan-l:  #22D3EE;
+      --white:   #F0F4FF;
+      --slate:   #8892A4;
+      --slate-l: #B4BCCC;
+      --border:  rgba(255,255,255,0.07);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--navy);
+      color: var(--white);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 5vw;
+      height: 72px;
+      background: rgba(5,11,24,0.8);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-logo {
+      font-family: 'Syne', sans-serif;
+      font-weight: 800; font-size: 1.4rem;
+      letter-spacing: -0.02em;
+      background: linear-gradient(135deg, var(--cyan), var(--indigo-l));
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+      text-decoration: none;
+    }
+    .nav-links {
+      display: flex; gap: 2.5rem; list-style: none;
+      align-items: center;
+    }
+    .nav-links a {
+      color: var(--slate-l); font-size: 0.875rem; font-weight: 500;
+      text-decoration: none; transition: color .2s;
+    }
+    .nav-links a:hover { color: var(--white); }
+    .nav-cta {
+      background: var(--indigo); color: #fff !important;
+      padding: 0.5rem 1.25rem; border-radius: 6px;
+      font-weight: 600 !important; transition: background .2s !important;
+    }
+    .nav-cta:hover { background: var(--indigo-l) !important; color: #fff !important; }
+
+    /* ── HERO ── */
+    #hero {
+      position: relative; min-height: 100vh;
+      display: flex; flex-direction: column;
+      justify-content: center; align-items: center;
+      text-align: center;
+      padding: 120px 5vw 80px;
+      overflow: hidden;
+    }
+    #hero-canvas {
+      position: absolute; inset: 0; width: 100%; height: 100%;
+      pointer-events: none;
+    }
+    .hero-eyebrow {
+      display: inline-flex; align-items: center; gap: .5rem;
+      background: rgba(79,70,229,.15);
+      border: 1px solid rgba(79,70,229,.35);
+      color: var(--cyan-l); font-size: .75rem; font-weight: 600;
+      letter-spacing: .12em; text-transform: uppercase;
+      padding: .35rem 1rem; border-radius: 999px;
+      margin-bottom: 1.75rem;
+    }
+    .pulse-dot {
+      width: 6px; height: 6px; border-radius: 50%;
+      background: var(--cyan);
+      animation: pulse 2s ease-in-out infinite;
+    }
+    @keyframes pulse {
+      0%,100% { opacity: 1; transform: scale(1); }
+      50% { opacity: .4; transform: scale(.6); }
+    }
+    .hero-title {
+      font-family: 'Syne', sans-serif;
+      font-size: clamp(2.6rem, 6vw, 5.2rem);
+      font-weight: 800; line-height: 1.05;
+      letter-spacing: -0.03em;
+      max-width: 860px; margin-bottom: 1.5rem;
+      position: relative; z-index: 1;
+    }
+    .hero-title em {
+      font-style: normal;
+      background: linear-gradient(135deg, var(--cyan) 0%, var(--indigo-l) 100%);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+    }
+    .hero-sub {
+      color: var(--slate-l); font-size: clamp(1rem, 1.8vw, 1.2rem);
+      max-width: 580px; margin-bottom: 2.5rem;
+      position: relative; z-index: 1;
+    }
+    .hero-actions {
+      display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center;
+      position: relative; z-index: 1;
+    }
+    .btn-primary {
+      display: inline-flex; align-items: center; gap: .5rem;
+      background: linear-gradient(135deg, var(--indigo), var(--cyan));
+      color: #fff; font-weight: 600; font-size: .95rem;
+      padding: .85rem 2rem; border-radius: 8px;
+      text-decoration: none; border: none; cursor: pointer;
+      transition: opacity .2s, transform .15s;
+    }
+    .btn-primary:hover { opacity: .88; transform: translateY(-1px); }
+    .btn-ghost {
+      display: inline-flex; align-items: center; gap: .5rem;
+      background: transparent;
+      border: 1px solid var(--border);
+      color: var(--white); font-weight: 500; font-size: .95rem;
+      padding: .85rem 2rem; border-radius: 8px;
+      text-decoration: none; cursor: pointer;
+      transition: border-color .2s, background .2s;
+    }
+    .btn-ghost:hover { border-color: rgba(255,255,255,.25); background: rgba(255,255,255,.04); }
+    .hero-stats {
+      display: flex; gap: 4rem; margin-top: 5rem;
+      position: relative; z-index: 1;
+      flex-wrap: wrap; justify-content: center;
+    }
+    .stat-item { text-align: center; }
+    .stat-num {
+      font-family: 'Syne', sans-serif; font-size: 2.4rem;
+      font-weight: 800; letter-spacing: -0.03em;
+      background: linear-gradient(135deg, #fff 40%, var(--slate-l));
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+    }
+    .stat-label { color: var(--slate); font-size: .8rem; letter-spacing: .06em; text-transform: uppercase; margin-top: .2rem; }
+
+    /* ── SECTION SHELL ── */
+    section { padding: 100px 5vw; }
+    .section-tag {
+      font-size: .7rem; font-weight: 700; letter-spacing: .18em;
+      text-transform: uppercase; color: var(--cyan);
+      margin-bottom: 1rem; display: block;
+    }
+    .section-title {
+      font-family: 'Syne', sans-serif; font-size: clamp(1.8rem, 3.5vw, 3rem);
+      font-weight: 800; letter-spacing: -0.025em; line-height: 1.1;
+      margin-bottom: 1rem;
+    }
+    .section-sub { color: var(--slate-l); font-size: 1.05rem; max-width: 520px; }
+
+    /* ── SERVICES ── */
+    #services { background: var(--navy-2); }
+    .services-head { text-align: center; margin-bottom: 4rem; }
+    .services-head .section-sub { margin: 0 auto; }
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5px;
+      background: var(--border);
+      border: 1px solid var(--border);
+      border-radius: 16px; overflow: hidden;
+    }
+    .service-card {
+      background: var(--navy-2);
+      padding: 2.5rem;
+      transition: background .25s;
+      cursor: default;
+    }
+    .service-card:hover { background: var(--navy-3); }
+    .service-icon {
+      width: 48px; height: 48px; border-radius: 12px;
+      background: linear-gradient(135deg, rgba(79,70,229,.25), rgba(6,182,212,.15));
+      border: 1px solid rgba(79,70,229,.3);
+      display: flex; align-items: center; justify-content: center;
+      margin-bottom: 1.5rem; font-size: 1.4rem;
+    }
+    .service-name {
+      font-family: 'Syne', sans-serif; font-weight: 700; font-size: 1.1rem;
+      margin-bottom: .6rem; letter-spacing: -0.01em;
+    }
+    .service-desc { color: var(--slate-l); font-size: .9rem; line-height: 1.7; }
+    .service-pill {
+      display: inline-block; margin-top: 1.2rem;
+      background: rgba(6,182,212,.1); border: 1px solid rgba(6,182,212,.2);
+      color: var(--cyan); font-size: .7rem; font-weight: 600;
+      letter-spacing: .08em; text-transform: uppercase;
+      padding: .25rem .75rem; border-radius: 999px;
+    }
+
+    /* ── HOW WE WORK ── */
+    #process { background: var(--navy); }
+    .process-layout {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 5rem; align-items: start;
+    }
+    .process-steps { display: flex; flex-direction: column; gap: 2rem; margin-top: 2rem; }
+    .step {
+      display: flex; gap: 1.25rem; align-items: flex-start;
+      padding: 1.5rem; border-radius: 12px; border: 1px solid transparent;
+      transition: border-color .2s, background .2s;
+    }
+    .step:hover { border-color: var(--border); background: var(--navy-3); }
+    .step-num {
+      font-family: 'Syne', sans-serif; font-weight: 800; font-size: 1.1rem;
+      color: var(--indigo); min-width: 36px;
+    }
+    .step-body h4 {
+      font-family: 'Syne', sans-serif; font-weight: 700;
+      font-size: 1rem; margin-bottom: .35rem;
+    }
+    .step-body p { color: var(--slate-l); font-size: .875rem; line-height: 1.65; }
+    .process-visual {
+      position: sticky; top: 100px;
+      background: var(--navy-2); border: 1px solid var(--border);
+      border-radius: 20px; padding: 2.5rem;
+      min-height: 420px; display: flex; flex-direction: column; justify-content: center;
+    }
+    .ai-loop {
+      display: flex; flex-direction: column; gap: 1rem;
+    }
+    .ai-row {
+      background: var(--navy-3); border: 1px solid var(--border);
+      border-radius: 10px; padding: 1rem 1.25rem;
+      display: flex; align-items: center; gap: 1rem;
+    }
+    .ai-row-icon { font-size: 1.2rem; }
+    .ai-row-text { font-size: .875rem; color: var(--slate-l); }
+    .ai-row-text strong { color: var(--white); display: block; font-weight: 600; margin-bottom: .1rem; }
+    .ai-bar { height: 4px; border-radius: 2px; background: var(--border); margin-top: .5rem; overflow: hidden; }
+    .ai-bar-fill { height: 100%; border-radius: 2px;
+      background: linear-gradient(90deg, var(--indigo), var(--cyan));
+      animation: grow 3s ease-in-out infinite alternate;
+    }
+    @keyframes grow { from { width: 20%; } to { width: 95%; } }
+
+    /* ── TECHNOLOGIES ── */
+    #tech { background: var(--navy-2); }
+    .tech-head { text-align: center; margin-bottom: 4rem; }
+    .tech-head .section-sub { margin: 0 auto; }
+    .tech-category { margin-bottom: 3rem; }
+    .tech-category-label {
+      font-size: .7rem; font-weight: 700; letter-spacing: .16em;
+      text-transform: uppercase; color: var(--slate);
+      margin-bottom: 1.25rem; display: block;
+      border-left: 2px solid var(--indigo); padding-left: .75rem;
+    }
+    .tech-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+      gap: 1rem;
+    }
+    .tech-badge {
+      background: var(--navy-3); border: 1px solid var(--border);
+      border-radius: 12px; padding: 1.4rem 1rem 1.1rem;
+      text-align: center; transition: border-color .2s, transform .2s;
+      display: flex; flex-direction: column; align-items: center; gap: .5rem;
+    }
+    .tech-badge:hover { border-color: rgba(79,70,229,.4); transform: translateY(-3px); }
+    .tech-badge-icon { font-size: 1.8rem; margin-bottom: .25rem; line-height: 1; }
+    .tech-badge-svg { width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; }
+    .tech-badge-svg svg { width: 40px; height: 40px; }
+    .tech-badge-name { font-size: .78rem; font-weight: 600; color: var(--slate-l); letter-spacing: .03em; }
+
+    /* ── INDUSTRIES ── */
+    #industries { background: var(--navy); }
+    .ind-layout { display: grid; grid-template-columns: 1.2fr 1fr; gap: 5rem; align-items: center; }
+    .ind-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 2rem; }
+    .ind-card {
+      background: var(--navy-2); border: 1px solid var(--border);
+      border-radius: 12px; padding: 1.5rem;
+      transition: border-color .2s;
+    }
+    .ind-card:hover { border-color: rgba(6,182,212,.3); }
+    .ind-card-icon { font-size: 1.5rem; margin-bottom: .75rem; }
+    .ind-card-name { font-family: 'Syne', sans-serif; font-weight: 700; font-size: .95rem; margin-bottom: .35rem; }
+    .ind-card-desc { color: var(--slate); font-size: .8rem; line-height: 1.55; }
+
+    /* ── TESTIMONIALS ── */
+    #testimonials { background: var(--navy-2); }
+    .testi-head { text-align: center; margin-bottom: 4rem; }
+    .testi-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem;
+    }
+    .testi-card {
+      background: var(--navy-3); border: 1px solid var(--border);
+      border-radius: 16px; padding: 2rem;
+    }
+    .stars { color: #FBBF24; font-size: .9rem; margin-bottom: 1rem; letter-spacing: .1em; }
+    .testi-quote { color: var(--slate-l); font-size: .9rem; line-height: 1.75; margin-bottom: 1.5rem; font-style: italic; }
+    .testi-author { display: flex; align-items: center; gap: .75rem; }
+    .testi-avatar {
+      width: 40px; height: 40px; border-radius: 50%;
+      background: linear-gradient(135deg, var(--indigo), var(--cyan));
+      display: flex; align-items: center; justify-content: center;
+      font-weight: 700; font-size: .9rem; color: #fff;
+      flex-shrink: 0;
+    }
+    .testi-name { font-weight: 600; font-size: .875rem; }
+    .testi-role { color: var(--slate); font-size: .775rem; }
+
+    /* ── CTA BAND ── */
+    #cta {
+      background: linear-gradient(135deg, rgba(79,70,229,.2) 0%, rgba(6,182,212,.1) 100%);
+      border-top: 1px solid rgba(79,70,229,.25);
+      border-bottom: 1px solid rgba(6,182,212,.15);
+      text-align: center; padding: 100px 5vw;
+    }
+    .cta-title {
+      font-family: 'Syne', sans-serif; font-size: clamp(2rem, 4vw, 3.5rem);
+      font-weight: 800; letter-spacing: -0.03em; margin-bottom: 1rem;
+    }
+    .cta-sub { color: var(--slate-l); margin-bottom: 2.5rem; font-size: 1.05rem; }
+    .cta-actions { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--navy);
+      border-top: 1px solid var(--border);
+      padding: 60px 5vw 32px;
+    }
+    .footer-grid {
+      display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr;
+      gap: 3rem; margin-bottom: 3rem;
+    }
+    .footer-brand .nav-logo { display: inline-block; margin-bottom: 1rem; }
+    .footer-brand p { color: var(--slate); font-size: .875rem; line-height: 1.7; max-width: 240px; }
+    .footer-col h5 {
+      font-family: 'Syne', sans-serif; font-weight: 700;
+      font-size: .8rem; letter-spacing: .1em; text-transform: uppercase;
+      color: var(--white); margin-bottom: 1.25rem;
+    }
+    .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: .6rem; }
+    .footer-col a { color: var(--slate); font-size: .875rem; text-decoration: none; transition: color .2s; }
+    .footer-col a:hover { color: var(--white); }
+    .footer-bottom {
+      border-top: 1px solid var(--border); padding-top: 1.5rem;
+      display: flex; justify-content: space-between; align-items: center;
+      flex-wrap: wrap; gap: 1rem;
+      color: var(--slate); font-size: .8rem;
+    }
+    .footer-socials { display: flex; gap: 1rem; }
+    .footer-socials a {
+      color: var(--slate); text-decoration: none;
+      font-size: .8rem; transition: color .2s;
+    }
+    .footer-socials a:hover { color: var(--white); }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 900px) {
+      .process-layout { grid-template-columns: 1fr; }
+      .process-visual { position: static; }
+      .ind-layout { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 640px) {
+      .nav-links { display: none; }
+      .hero-stats { gap: 2rem; }
+      .ind-cards { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr; }
+      .footer-bottom { flex-direction: column; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ── NAV ── -->
+<nav>
+  <a class="nav-logo" href="#">Uvix Technologies</a>
+  <ul class="nav-links">
+    <li><a href="#services">Services</a></li>
+    <li><a href="#process">How We Work</a></li>
+    <li><a href="#tech">Technologies</a></li>
+    <li><a href="#industries">Industries</a></li>
+    <li><a href="#testimonials">Clients</a></li>
+    <li><a href="#cta" class="nav-cta">Get Started</a></li>
+  </ul>
+</nav>
+
+<!-- ── HERO ── -->
+<section id="hero">
+  <canvas id="hero-canvas"></canvas>
+
+  <div class="hero-eyebrow">
+    <span class="pulse-dot"></span>
+    AI-Powered IT Services
+  </div>
+
+  <h1 class="hero-title">
+    Build Smarter Systems<br />with <em>Embedded Intelligence</em>
+  </h1>
+  <p class="hero-sub">
+    Uvix Technologies delivers end-to-end AI-integrated IT solutions — from cloud infrastructure to custom LLM pipelines — that make your operations faster, leaner, and future-ready.
+  </p>
+  <div class="hero-actions">
+    <a href="#cta" class="btn-primary">
+      Start Your Project
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    </a>
+    <a href="#services" class="btn-ghost">Explore Services</a>
+  </div>
+
+  <div class="hero-stats">
+    <div class="stat-item"><div class="stat-num">200+</div><div class="stat-label">Projects Delivered</div></div>
+    <div class="stat-item"><div class="stat-num">98%</div><div class="stat-label">Client Retention</div></div>
+    <div class="stat-item"><div class="stat-num">40+</div><div class="stat-label">AI Engineers</div></div>
+    <div class="stat-item"><div class="stat-num">12</div><div class="stat-label">Countries Served</div></div>
+  </div>
+</section>
+
+<!-- ── SERVICES ── -->
+<section id="services">
+  <div class="services-head">
+    <span class="section-tag">What We Build</span>
+    <h2 class="section-title">Services Designed for<br />the AI Era</h2>
+    <p class="section-sub">From strategy to deployment, every engagement is shaped by the intelligence your business needs to lead.</p>
+  </div>
+  <div class="services-grid">
+    <div class="service-card">
+      <div class="service-icon">🧠</div>
+      <div class="service-name">AI & Machine Learning</div>
+      <p class="service-desc">Custom model development, fine-tuning, and MLOps pipelines. We build LLM-powered products, computer vision systems, and predictive analytics engines.</p>
+      <span class="service-pill">LLMs · MLOps · NLP</span>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">☁️</div>
+      <div class="service-name">Cloud Infrastructure</div>
+      <p class="service-desc">Multi-cloud architecture on AWS, Azure, and GCP. We design resilient, auto-scaling environments and manage DevOps pipelines from day one.</p>
+      <span class="service-pill">AWS · Azure · GCP</span>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">🔒</div>
+      <div class="service-name">Cybersecurity & AI Defense</div>
+      <p class="service-desc">Zero-trust implementations, threat detection with ML, SOC automation, and compliance frameworks including SOC 2, ISO 27001, and GDPR.</p>
+      <span class="service-pill">Zero-Trust · SIEM · Compliance</span>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">⚡</div>
+      <div class="service-name">Intelligent Automation</div>
+      <p class="service-desc">RPA enhanced with AI decision-making, document intelligence, and agentic workflows that reduce manual effort by up to 80%.</p>
+      <span class="service-pill">RPA · Agents · Document AI</span>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">📊</div>
+      <div class="service-name">Data Engineering</div>
+      <p class="service-desc">End-to-end data platform design — lakehouses, real-time streaming, semantic layers, and AI-ready data products that power confident decisions.</p>
+      <span class="service-pill">Lakehouse · Kafka · dbt</span>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">📱</div>
+      <div class="service-name">Product Engineering</div>
+      <p class="service-desc">Full-stack development of AI-native web and mobile applications, from Next.js frontends to distributed backends and vector-database-powered search.</p>
+      <span class="service-pill">Next.js · FastAPI · Vector DB</span>
+    </div>
+  </div>
+</section>
+
+<!-- ── PROCESS ── -->
+<section id="process">
+  <div class="process-layout">
+    <div>
+      <span class="section-tag">How We Work</span>
+      <h2 class="section-title">Structured for Speed.<br />Built for Longevity.</h2>
+      <p class="section-sub">Our delivery model pairs deep technical expertise with embedded AI acceleration at every phase.</p>
+      <div class="process-steps">
+        <div class="step">
+          <div class="step-num">01</div>
+          <div class="step-body">
+            <h4>Discovery & AI Audit</h4>
+            <p>We map your current stack, data landscape, and business goals to identify the highest-leverage AI integration points.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">02</div>
+          <div class="step-body">
+            <h4>Architecture & Prototyping</h4>
+            <p>A working prototype in two weeks — not a deck. We validate the technical approach early and iterate before scale.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">03</div>
+          <div class="step-body">
+            <h4>Agile Delivery</h4>
+            <p>Two-week sprints, weekly demos, continuous CI/CD. You see progress every step, not just at the finish line.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">04</div>
+          <div class="step-body">
+            <h4>Monitor, Optimise & Scale</h4>
+            <p>Post-launch we run model monitoring, infrastructure cost optimization, and AI governance reviews quarterly.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="process-visual">
+      <p style="font-family:'Syne',sans-serif;font-weight:700;font-size:.8rem;letter-spacing:.1em;text-transform:uppercase;color:var(--cyan);margin-bottom:1.5rem;">Live AI Pipeline</p>
+      <div class="ai-loop">
+        <div class="ai-row">
+          <div class="ai-row-icon">🗃️</div>
+          <div class="ai-row-text" style="flex:1">
+            <strong>Data Ingestion</strong>
+            Streaming 142K events / sec
+            <div class="ai-bar"><div class="ai-bar-fill" style="animation-delay:0s"></div></div>
+          </div>
+        </div>
+        <div class="ai-row">
+          <div class="ai-row-icon">🔮</div>
+          <div class="ai-row-text" style="flex:1">
+            <strong>Model Inference</strong>
+            Latency p95 — 48ms
+            <div class="ai-bar"><div class="ai-bar-fill" style="animation-delay:.4s"></div></div>
+          </div>
+        </div>
+        <div class="ai-row">
+          <div class="ai-row-icon">📡</div>
+          <div class="ai-row-text" style="flex:1">
+            <strong>Anomaly Detection</strong>
+            0 alerts · All systems nominal
+            <div class="ai-bar"><div class="ai-bar-fill" style="animation-delay:.8s;background:linear-gradient(90deg,#10B981,#06B6D4)"></div></div>
+          </div>
+        </div>
+        <div class="ai-row">
+          <div class="ai-row-icon">🚀</div>
+          <div class="ai-row-text" style="flex:1">
+            <strong>Auto-Scaling</strong>
+            12 → 34 pods · Cost optimised
+            <div class="ai-bar"><div class="ai-bar-fill" style="animation-delay:1.2s;background:linear-gradient(90deg,var(--indigo),#A78BFA)"></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── TECH ── -->
+<section id="tech">
+  <div class="tech-head">
+    <span class="section-tag">Our Stack</span>
+    <h2 class="section-title">Best-in-Class Technology</h2>
+    <p class="section-sub">We choose tools for your problem, not ours — but here's the stack we trust most.</p>
+  </div>
+  <div class="tech-grid">
+    <!-- Frontend -->
+    <div class="tech-badge"><div class="tech-badge-icon tech-badge-svg"><svg viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg"><path d="M64 0L8.656 32v64L64 128l55.344-32V32zm0 10.612l44.344 25.61v51.556L64 113.388 19.656 87.778V36.222z" fill="#61DAFB"/><circle cx="64" cy="64" r="11.36" fill="#61DAFB"/><path d="M64 37.29c13.57 0 26.27 1.87 35.77 5.28C109.2 46.01 115 50.55 115 55.5s-5.8 9.49-15.23 12.93C90.27 71.84 77.57 73.71 64 73.71s-26.27-1.87-35.77-5.28C18.8 64.99 13 60.45 13 55.5s5.8-9.49 15.23-12.92C37.73 39.17 50.43 37.29 64 37.29z" fill="none" stroke="#61DAFB" stroke-width="6"/><path d="M41.19 46.4c6.79-11.75 15.3-21.37 23.43-27.43 4.75-3.55 9.3-5.43 13.08-5.43 3.79 0 7.04 1.88 9.74 5.6 3.07 4.24 4.67 10.53 4.67 18.21 0 7.47-1.52 16.12-4.48 24.88-2.96 8.76-7.18 16.73-12.09 22.63-4.75 5.7-9.72 8.8-14.33 8.8-4.62 0-9.26-3.43-13.54-9.9-4.05-6.1-6.93-14.7-6.93-24.33 0-4.88.6-9.88 2.45-14.03z" fill="none" stroke="#61DAFB" stroke-width="6"/><path d="M41.2 64.66c-6.8-11.75-10.54-23.99-10.54-34.2 0-5.13 1.1-9.44 3.34-12.44 2.24-3 5.53-4.61 9.83-4.61 5.18 0 11.17 2.63 17.37 7.74 5.86 4.83 11.66 12.03 16.55 20.85 4.9 8.82 8.13 18.05 9.33 26.4.97 6.76.56 12.84-1.26 17.33-1.68 4.14-4.56 6.6-8.64 6.6-4.85 0-10.6-3.26-16.48-9.44-5.52-5.8-11.04-14.5-14.5-24.23z" fill="none" stroke="#61DAFB" stroke-width="6"/></svg></div><div class="tech-badge-name">React</div></div>
+    <div class="tech-badge"><div class="tech-badge-icon tech-badge-svg"><svg viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg"><path d="M64 0C28.7 0 0 28.7 0 64s28.7 64 64 64 64-28.7 64-64S99.3 0 64 0zm0 11.2c29.1 0 52.8 23.7 52.8 52.8S93.1 116.8 64 116.8 11.2 93.1 11.2 64 34.9 11.2 64 11.2z" fill="#000"/><path d="M64 0C28.7 0 0 28.7 0 64s28.7 64 64 64 64-28.7 64-64S99.3 0 64 0z" fill="#000"/><path d="M114.2 64c0 27.7-22.5 50.2-50.2 50.2S13.8 91.7 13.8 64 36.3 13.8 64 13.8 114.2 36.3 114.2 64z" fill="#fff"/><text x="64" y="72" text-anchor="middle" font-size="38" font-family="Arial Black,sans-serif" font-weight="900" fill="#000">N</text></svg></div><div class="tech-badge-name">Next.js</div></div>
+    <div class="tech-badge"><div class="tech-badge-icon tech-badge-svg"><svg viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg"><path d="M64 13.1L9.6 45.3v64.4L64 141.9l54.4-32.2V45.3z" fill="#DD0031"/><path d="M64 13.1v128.8l54.4-32.2V45.3z" fill="#C3002F"/><path d="M64 28.5L30.8 99.2h12.7l6.6-16.5h27.8l6.6 16.5H97L64 28.5zm0 22.4l10.3 25.8H53.7L64 50.9z" fill="#fff"/></svg></div><div class="tech-badge-name">Angular</div></div>
+    <div class="tech-badge"><div class="tech-badge-icon tech-badge-svg"><svg viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg"><path d="M78.8 46.4H64.7V35.6h14.1c3.1 0 5.7 2.5 5.7 5.7v.1c-.1 2.8-2.5 5-5.7 5zm0 0" fill="#41b883"/><path d="M49.2 46.4H35.1v-10.8h14.1c3.1 0 5.7 2.5 5.7 5.7v.1c0 2.8-2.4 5-5.7 5zm0 0" fill="#41b883"/><path d="M64 0L8.8 32v64L64 128l55.2-32V32zm0 103.5c-21.8 0-39.5-17.7-39.5-39.5S42.2 24.5 64 24.5s39.5 17.7 39.5 39.5-17.7 39.5-39.5 39.5zm0 0" fill="#41b883"/><path d="M64 24.5C42.2 24.5 24.5 42.2 24.5 64S42.2 103.5 64 103.5 103.5 85.8 103.5 64 85.8 24.5 64 24.5zM78.8 64H64.7v19.4H49.2V64H35.1V49.5h14.1V35.6h15.5v13.9h14.1V64zm0 0" fill="#35495e"/></svg></div><div class="tech-badge-name">Vue.js</div></div>
+    <!-- Backend -->
+    <div class="tech-badge"><div class="tech-badge-icon tech-badge-svg"><svg viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg"><path d="M107.5 38.6L83 14.1A11.9 11.9 0 0074.6 11H38.9C32.8 11 28 15.8 28 21.9V106c0 6.1 4.8 10.9 10.9 10.9h50.2c6.1 0 10.9-4.8 10.9-10.9V47.6c0-3.3-1.3-6.4-3.5-9zm-19.6-17l16.2 17H88v-17zm14.4 84.5H25.7V21.9c0-3.7 3-6.7 6.7-6.7H82v26.3h14.3V106c0 3.7-3 6.6-6.7 6.6v.5h.1c.1 0 .1 0 0 0 3.6-.1 6.6-3 6.6-6.6V106zm-32.5-36H40.2v5.2h29.6v-5.2zm12.4-13.4H40.2v5.2h42v-5.2zm0-13.4H40.2v5.2h42v-5.2z" fill="#512BD4"/></svg></div><div class="tech-badge-name">.NET Core</div></div>
+    <div class="tech-badge"><div class="tech-badge-icon tech-badge-svg"><svg viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg"><path d="M57.5 11L7 41.5v57L57.5 129 108 98.5v-57zm0 10.5l40 23v46l-40 23-40-23v-46zm-6.8 14.7l-19.5 38.3h7.3l3.8-7.8h16.6l3.8 7.8h7.5L50.7 36.2zm.3 11.8l5.8 12.3H45.2zm25.5-11.8v38.3h6.5V48.8l9.3 14.7 9.3-14.7v29.4h6.5V36.2H101l-9.3 15-9.3-15z" fill="#512BD4"/></svg></div><div class="tech-badge-name">.NET Framework</div></div>
+    <div class="tech-badge"><div class="tech-badge-icon tech-badge-svg"><svg viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg"><path d="M64 0C28.7 0 0 28.7 0 64s28.7 64 64 64 64-28.7 64-64S99.3 0 64 0zm29.5 88.6H34.3V38.1h59.2v50.5zm0 0" fill="#f7df1e"/><path d="M64 0C28.7 0 0 28.7 0 64s28.7 64 64 64 64-28.7 64-64S99.3 0 64 0z" fill="#f7df1e"/><rect width="128" height="128" fill="#f7df1e"/><path d="M33.9 94.1l8.3-5c1.6 2.8 3 5.2 6.5 5.2 3.3 0 5.4-1.3 5.4-6.3V58.4h10.2v29.7c0 10.4-6.1 15.1-15 15.1-8 0-12.7-4.2-15.1-9.1zm36.4-1l8.3-5.1c2.2 3.6 5 6.2 10 6.2 4.2 0 6.9-2.1 6.9-5 0-3.5-2.8-4.7-7.4-6.7l-2.5-1.1c-7.4-3.1-12.2-7.1-12.2-15.4 0-7.7 5.8-13.5 15-13.5 6.5 0 11.2 2.3 14.6 8.2l-8 5.1c-1.8-3.2-3.7-4.4-6.6-4.4-3 0-4.9 1.9-4.9 4.4 0 3.1 1.9 4.3 6.3 6.2l2.5 1.1c8.7 3.7 13.5 7.6 13.5 16.1 0 9.2-7.2 14.2-16.9 14.2-9.5 0-15.6-4.5-18.6-10.3z"/></svg></div><div class="tech-badge-name">JavaScript</div></div>
+    <div class="tech-badge"><div class="tech-badge-icon tech-badge-svg"><svg viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg"><path d="M2 63.91v62.5h125v-125H2zm100.73-5a15.56 15.56 0 017.82 4.5 20.58 20.58 0 013 4c0 .16-5.4 3.81-8.69 5.85-.12.08-.6-.44-1.13-1.23a7.09 7.09 0 00-5.87-3.53c-3.79-.26-6.23 1.73-6.21 5a4.58 4.58 0 00.54 2.34c.83 1.73 2.38 2.76 7.24 4.86 8.95 3.85 12.78 6.39 15.16 10 2.66 4 3.25 10.46 1.45 15.24-2 5.2-6.9 8.73-13.83 9.9a38.32 38.32 0 01-9.52-.1 23 23 0 01-12.72-6.63c-1.15-1.27-3.39-4.58-3.25-4.82a9.34 9.34 0 011.15-.73l4.6-2.64 3.59-2.08.75 1.11a16.78 16.78 0 004.74 4.54c4 2.1 9.46 1.81 12.16-.62a5.43 5.43 0 00.69-6.92c-1-1.39-3-2.56-8.59-5-6.45-2.78-9.23-4.5-11.77-7.24a16.48 16.48 0 01-3.43-6.25 25 25 0 01-.22-8c1.33-6.23 6-10.58 12.82-11.87a31.66 31.66 0 019.49.26zm-29.34 5.24v5.12H57.16v46.23H45.65V69.26H29.38v-5a49.19 49.19 0 01.14-5.16c.06-.08 10-.12 22-.1l21.83.06z" fill="#007acc"/></svg></div><div class="tech-badge-name">TypeScript</div></div>
+    <!-- Database -->
+    <div class="tech-badge"><div class="tech-badge-icon tech-badge-svg"><svg viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg"><path d="M116.9 33.4c-.8-6.4-6.3-11.4-13-12.5C88.4 18.3 71.5 17 55.8 17c-16 0-32.7 1.4-47.5 4-6.4 1.2-11.5 6-12.3 12.3C-5.2 44.5-5.2 83.5-4 94.3c.8 6.4 6.3 11.4 13 12.5 14.7 2.6 31.5 3.9 47.3 3.9 16 0 32.7-1.4 47.5-4 6.4-1.2 11.5-6 12.3-12.3 1.2-10.8 1.2-50.5-.2-61z" fill="#4DB33D"/><path d="M86.3 64c0 12.3-9.9 22.2-22.2 22.2S41.8 76.3 41.8 64c0-12.3 9.9-22.2 22.2-22.2C76.4 41.8 86.3 51.7 86.3 64z" fill="#3F9142"/><path d="M64.1 41.8c-12.3 0-22.2 9.9-22.2 22.2S51.8 86.2 64.1 86.2 86.3 76.3 86.3 64c0-12.3-9.9-22.2-22.2-22.2zm0 38.9c-9.2 0-16.7-7.5-16.7-16.7S54.9 47.3 64.1 47.3 80.8 54.8 80.8 64s-7.5 16.7-16.7 16.7z" fill="#fff"/></svg></div><div class="tech-badge-name">MongoDB</div></div>
+    <div class="tech-badge"><div class="tech-badge-icon tech-badge-svg"><svg viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg"><path d="M116.9 33.4c-.8-6.4-6.3-11.4-13-12.5C88.4 18.3 71.5 17 55.8 17c-16 0-32.7 1.4-47.5 4-6.4 1.2-11.5 6-12.3 12.3C-5.2 44.5-5.2 83.5-4 94.3c.8 6.4 6.3 11.4 13 12.5 14.7 2.6 31.5 3.9 47.3 3.9 16 0 32.7-1.4 47.5-4 6.4-1.2 11.5-6 12.3-12.3 1.2-10.8 1.2-50.5-.2-61z" fill="#00758F"/><path d="M80.4 68.7c-2.3 0-4.3 1-5.8 2.5l-.2-.2c.6-5.1 4.1-9.6 8.5-11.5 1.1-.5.9-2.1-.3-2.3-7.6-1.3-15.8 3.6-17.9 12.1-2.2 8.8 3.3 17.6 12 19.3 8.5 1.7 16.6-4.4 17.2-13a12 12 0 00-13.5-12.9zm1.3 20.1c-4.9.7-9.4-2.9-9.8-7.9-.4-5 3.4-9.3 8.4-9.7 4.9-.4 9.1 3.2 9.5 8.1.4 5.1-3.2 9-8.1 9.5z" fill="#fff"/><path d="M52.7 57.3c-8.1 0-14.7 6.6-14.7 14.7s6.6 14.7 14.7 14.7S67.4 80.1 67.4 72s-6.6-14.7-14.7-14.7zm0 24.9c-5.6 0-10.2-4.6-10.2-10.2s4.6-10.2 10.2-10.2S62.9 66.4 62.9 72s-4.6 10.2-10.2 10.2z" fill="#fff"/></svg></div><div class="tech-badge-name">MySQL</div></div>
+    <div class="tech-badge"><div class="tech-badge-icon tech-badge-svg"><svg viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg"><path d="M93.8 21.3H34.2C27 21.3 21.3 27 21.3 34.2v59.6c0 7.2 5.7 12.9 12.9 12.9h59.6c7.2 0 12.9-5.7 12.9-12.9V34.2c0-7.2-5.7-12.9-12.9-12.9z" fill="#336791"/><path d="M64 33.2c-12.3 0-22.3 9.2-22.3 20.5 0 5.3 2.3 10.2 6.1 13.9L42 83.8c-.4 1 .5 2 1.5 1.7l16.8-5.5c1.2.2 2.4.3 3.7.3 12.3 0 22.3-9.2 22.3-20.5S76.3 33.2 64 33.2zm0 37.1c-1.3 0-2.5-.1-3.7-.4l-11.8 3.9 5.5-11.2c-3.1-3-5-7.1-5-11.5C49 43.5 55.8 37 64 37c8.2 0 14.9 6.5 14.9 14.4C78.9 59.8 72.2 70.3 64 70.3z" fill="#fff"/></svg></div><div class="tech-badge-name">PostgreSQL</div></div>
+    <div class="tech-badge"><div class="tech-badge-icon tech-badge-svg"><svg viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg"><path d="M64 8C33.1 8 8 33.1 8 64s25.1 56 56 56 56-25.1 56-56S94.9 8 64 8z" fill="#DC382D"/><path d="M85.6 76.3c-3.4 1.7-20.4 8.8-24 10.6-3.7 1.7-5.7 1.7-8.6.3-2.9-1.4-20.5-8.4-24-9.9-1.7-.7-2.6-1.3-2.6-1.8v-6s23.4-5.1 27.2-6.4c3.8-1.4 5.1-1.4 8.3-.3 3.2 1.1 22.7 4.7 25.8 5.7v5.9c0 .6-.7 1.2-2.1 1.9z" fill="#fff"/><path d="M85.6 65.3c-3.4 1.7-20.4 8.8-24 10.6-3.7 1.7-5.7 1.7-8.6.3-2.9-1.4-20.5-8.5-24-9.9-3.4-1.5-3.5-2.5-.1-3.8l24.8-9.1c3.8-1.4 5.1-1.4 8.3-.3l25.8 9.1c3.3 1.2 3.2 2.4-.2 3.1z" fill="#fff"/></svg></div><div class="tech-badge-name">Redis</div></div>
+    <!-- Cloud & DevOps -->
+    <div class="tech-badge"><div class="tech-badge-icon tech-badge-svg"><svg viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg"><path d="M41.4 65.1c-1.5 0-2.9.3-4.2.8l-3.1-5.4c1.5-1.2 2.5-3 2.5-5.1 0-3.6-2.9-6.5-6.5-6.5S23.6 51.8 23.6 55.4c0 3.6 2.9 6.5 6.5 6.5.8 0 1.6-.1 2.3-.4l3.1 5.4c-2.5 2-4.1 5.1-4.1 8.5 0 6.1 5 11 11 11 4.7 0 8.8-3 10.4-7.2h6.3c1.4 4.3 5.4 7.4 10.2 7.4 5.9 0 10.7-4.8 10.7-10.7 0-5.9-4.8-10.7-10.7-10.7-4.6 0-8.5 2.9-10 7h-6.4c-.8-2.3-2.2-4.3-4-5.8l3.6-7.6c.7.2 1.4.3 2.1.3 5.1 0 9.2-4.1 9.2-9.2S59.7 41 54.6 41s-9.2 4.1-9.2 9.2c0 2.4.9 4.5 2.4 6.2l-3.6 7.5c-.9-.5-1.8-.8-2.8-.8zm28 5.8c2.9 0 5.2 2.3 5.2 5.2s-2.3 5.2-5.2 5.2-5.2-2.3-5.2-5.2 2.3-5.2 5.2-5.2zM42.8 75.4c0 3.1-2.5 5.6-5.6 5.6s-5.6-2.5-5.6-5.6 2.5-5.6 5.6-5.6 5.6 2.5 5.6 5.6z" fill="#FF9900"/><path d="M103.2 55.4c0 3.6-2.9 6.5-6.5 6.5-1.2 0-2.3-.3-3.2-.9l-5.6 5.6c1 1.6 1.6 3.5 1.6 5.5 0 5.9-4.8 10.7-10.7 10.7S68.1 78 68.1 72.1c0-.6.1-1.1.1-1.7h-6.4c-.1.5-.1 1.1-.1 1.7 0 5.9-4.8 10.7-10.7 10.7S40.3 78 40.3 72.1s4.8-10.7 10.7-10.7c1.7 0 3.3.4 4.7 1.1l3.6-7.5c-1.5-1.6-2.4-3.8-2.4-6.2 0-5.1 4.1-9.2 9.2-9.2S75.3 43.7 75.3 48.8c0 2.7-1.1 5.1-2.9 6.8l5.6 5.6c1-.5 2.2-.9 3.4-.9 4.2 0 7.6 3.4 7.6 7.6l-.1.4 5.2-5.2c-.4-.9-.6-1.8-.6-2.8 0-3.6 2.9-6.5 6.5-6.5s6.5 2.9 6.5 6.5z" fill="#FF9900"/></svg></div><div class="tech-badge-name">AWS</div></div>
+    <div class="tech-badge"><div class="tech-badge-icon tech-badge-svg"><svg viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="az1" x1="60.9" y1="107.7" x2="120.5" y2="38.4" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#114A8B"/><stop offset="1" stop-color="#0669BC"/></linearGradient><linearGradient id="az2" x1="74.6" y1="73" x2="63.8" y2="76.5" gradientUnits="userSpaceOnUse"><stop offset="0" stop-opacity=".3"/><stop offset=".07" stop-opacity=".2"/><stop offset=".32" stop-opacity=".1"/><stop offset=".62" stop-opacity=".05"/><stop offset="1" stop-opacity="0"/></linearGradient><linearGradient id="az3" x1="68.3" y1="18.6" x2="27.9" y2="92.7" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#3CCBF4"/><stop offset="1" stop-color="#2892DF"/></linearGradient></defs><path d="M46.1 12.5H1.6l44 65.6L1.6 115.5h43.9L90 12.5z" fill="url(#az1)"/><path d="M45.5 78.1l7.2 10.7 22.6-11.3z" fill="url(#az2)"/><path d="M46.1 12.5h44.4l37.9 103H84.9l-10.4-32.7H45.6l-17.8 32.7H1.6L46.1 12.5zm28.4 55l-14.2-41.1L38.5 67.5z" fill="url(#az3)"/></svg></div><div class="tech-badge-name">Azure</div></div>
+    <div class="tech-badge"><div class="tech-badge-icon tech-badge-svg"><svg viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg"><path d="M64 13.1L9.6 45.3v64.4L64 141.9l54.4-32.2V45.3z" fill="#326CE5"/><path d="M64 24.9L20.5 50.7v51.6L64 128.1l43.5-25.8V50.7zm0 8.2l35.6 21.1v42.6L64 118l-35.6-21.1V54.2z" fill="#fff"/><path d="M63.3 42.9c-1.2 0-2.1 1-2.1 2.2l-.4 23c0 1.2.9 2.1 2.1 2.1s2.1-.9 2.1-2.1l.4-23c.1-1.2-.9-2.2-2.1-2.2zm-1.1 36.2c-1.8 0-3.3 1.5-3.3 3.3s1.5 3.3 3.3 3.3 3.3-1.5 3.3-3.3-1.5-3.3-3.3-3.3z" fill="#326CE5"/></svg></div><div class="tech-badge-name">Kubernetes</div></div>
+    <div class="tech-badge"><div class="tech-badge-icon tech-badge-svg"><svg viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg"><path d="M64 8C33.1 8 8 33.1 8 64s25.1 56 56 56 56-25.1 56-56S94.9 8 64 8z" fill="#2496ED"/><path d="M90.7 55.9H68.2V33.3c0-2.3-1.9-4.2-4.2-4.2s-4.2 1.9-4.2 4.2v22.5H37.3c-2.3 0-4.2 1.9-4.2 4.2s1.9 4.2 4.2 4.2h22.5v22.5c0 2.3 1.9 4.2 4.2 4.2s4.2-1.9 4.2-4.2V64.3h22.5c2.3 0 4.2-1.9 4.2-4.2s-1.9-4.2-4.2-4.2z" fill="#fff"/></svg></div><div class="tech-badge-name">Docker</div></div>
+    <!-- AI & Data -->
+    <div class="tech-badge"><div class="tech-badge-icon tech-badge-svg"><svg viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg"><path d="M64 8L8 40v48l56 32 56-32V40z" fill="#EE4C2C"/><path d="M64 18.4L18.4 44.8v38.4L64 109.6l45.6-26.4V44.8z" fill="#fff"/><path d="M64 28.8L28.8 49.2v38.4L64 108l35.2-20.4V49.2z" fill="#EE4C2C"/></svg></div><div class="tech-badge-name">PyTorch</div></div>
+    <div class="tech-badge"><div class="tech-badge-icon tech-badge-svg"><svg viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg"><path d="M64 8C33.1 8 8 33.1 8 64s25.1 56 56 56 56-25.1 56-56S94.9 8 64 8z" fill="#FF6F00"/><path d="M32 54.4l8.8 22.4 8.8-22.4H57l-13.2 32H36L23 54.4zm30.4 0v32h-7.2v-32h7.2zm12 18.4v.8c0 5.6 2.8 8.4 8 8.4 2.4 0 5.2-.8 7.2-2.4l2.4 5.2c-2.8 2-6.4 3.2-10.4 3.2-9.2 0-14.4-5.2-14.4-14.8 0-8.8 5.2-14.8 13.2-14.8 7.6 0 12.4 4.8 12.4 12.4 0 .8-.4 2-.4 2H74.4zm11.2-4.8c0-4-2.4-6.4-6-6.4-3.2 0-5.6 2.4-6 6.4h12z" fill="#fff"/></svg></div><div class="tech-badge-name">TensorFlow</div></div>
+    <div class="tech-badge"><div class="tech-badge-icon tech-badge-svg"><svg viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg"><path d="M64 8C33.1 8 8 33.1 8 64s25.1 56 56 56 56-25.1 56-56S94.9 8 64 8z" fill="#3776AB"/><path d="M63.4 29.1c-13.8 0-12.9 6-12.9 6l.01 6.2h13.2v1.9H43.8s-8.7-1-8.7 12.9 7.6 13.5 7.6 13.5h4.5V63s-.2-7.6 7.5-7.6h12.9s7.2.1 7.2-7V35.9s1.1-6.8-11.4-6.8zM56.3 33c1.3 0 2.3 1 2.3 2.3s-1 2.3-2.3 2.3-2.3-1-2.3-2.3 1-2.3 2.3-2.3z" fill="#FFD43B"/><path d="M64.6 98.9c13.8 0 12.9-6 12.9-6l-.01-6.2H64.3v-1.9h19.9s8.7 1 8.7-12.9-7.6-13.5-7.6-13.5h-4.5v6.6s.2 7.6-7.5 7.6H60.4s-7.2-.1-7.2 7V92s-1.1 6.9 11.4 6.9zM71.7 95c-1.3 0-2.3-1-2.3-2.3s1-2.3 2.3-2.3 2.3 1 2.3 2.3-1 2.3-2.3 2.3z" fill="#3776AB"/></svg></div><div class="tech-badge-name">Python</div></div>
+    <div class="tech-badge"><div class="tech-badge-icon tech-badge-svg"><svg viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg"><path d="M64 8C33.1 8 8 33.1 8 64s25.1 56 56 56 56-25.1 56-56S94.9 8 64 8z" fill="#000"/><path d="M97 55H73.5V31.5c0-1.4-1.1-2.5-2.5-2.5s-2.5 1.1-2.5 2.5V55H46c-1.4 0-2.5 1.1-2.5 2.5S44.6 60 46 60h22.5v22.5c0 1.4 1.1 2.5 2.5 2.5s2.5-1.1 2.5-2.5V60H97c1.4 0 2.5-1.1 2.5-2.5S98.4 55 97 55z" fill="#fff"/><text x="64" y="98" text-anchor="middle" font-size="14" font-family="sans-serif" font-weight="700" fill="#fff">Next.js</text></svg></div><div class="tech-badge-name">Next.js</div></div>
+    <div class="tech-badge"><div class="tech-badge-icon tech-badge-svg"><svg viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg"><path d="M64 8C33.1 8 8 33.1 8 64s25.1 56 56 56 56-25.1 56-56S94.9 8 64 8z" fill="#6366F1"/><path d="M38 84V44h14c4 0 7 .8 9.2 2.4 2.2 1.6 3.3 3.9 3.3 6.9 0 1.8-.5 3.4-1.4 4.7-1 1.3-2.3 2.3-4 2.9 2 .5 3.6 1.5 4.8 3 1.2 1.5 1.8 3.3 1.8 5.3 0 3.2-1.1 5.7-3.3 7.4C60.2 78.2 57 79 52.8 79H38v5zm8-24h6c1.8 0 3.2-.4 4.2-1.2 1-.8 1.5-1.9 1.5-3.4 0-1.6-.5-2.8-1.5-3.5S54 50.8 52 50.8h-6V60zm0 17h6.8c2 0 3.5-.4 4.6-1.3 1.1-.9 1.6-2.1 1.6-3.8 0-1.6-.5-2.9-1.6-3.8-1.1-.9-2.7-1.3-4.8-1.3H46V77zm44-7h-7v14h-8V44h15c4.4 0 7.8 1 10.2 3 2.4 2 3.6 4.8 3.6 8.3 0 2.5-.6 4.6-1.8 6.2-1.2 1.6-3 2.9-5.3 3.8L105 84h-8.7L90 70zm-7-6.7h6.8c2 0 3.5-.5 4.5-1.4 1-.9 1.5-2.2 1.5-3.9s-.5-3-1.5-3.9c-1-.9-2.5-1.3-4.5-1.3H83V63.3z" fill="#fff"/></svg></div><div class="tech-badge-name">LangChain</div></div>
+  </div>
+</section>
+
+<!-- ── INDUSTRIES ── -->
+<section id="industries">
+  <div class="ind-layout">
+    <div>
+      <span class="section-tag">Industries</span>
+      <h2 class="section-title">Deep Domain,<br />Wider Impact</h2>
+      <p class="section-sub">We don't believe in generic AI. Our teams carry vertical expertise that makes every solution contextually intelligent.</p>
+      <div style="margin-top:2rem">
+        <a href="#cta" class="btn-primary">Talk to a Domain Expert →</a>
+      </div>
+    </div>
+    <div class="ind-cards">
+      <div class="ind-card">
+        <div class="ind-card-icon">🏦</div>
+        <div class="ind-card-name">FinTech</div>
+        <p class="ind-card-desc">Fraud detection, credit scoring, algorithmic trading, and RegTech automation.</p>
+      </div>
+      <div class="ind-card">
+        <div class="ind-card-icon">🏥</div>
+        <div class="ind-card-name">HealthTech</div>
+        <p class="ind-card-desc">Clinical NLP, medical imaging AI, patient flow optimization, HIPAA-compliant platforms.</p>
+      </div>
+      <div class="ind-card">
+        <div class="ind-card-icon">🛒</div>
+        <div class="ind-card-name">Retail & E-commerce</div>
+        <p class="ind-card-desc">AI personalisation, demand forecasting, visual search, and dynamic pricing engines.</p>
+      </div>
+      <div class="ind-card">
+        <div class="ind-card-icon">🏭</div>
+        <div class="ind-card-name">Manufacturing</div>
+        <p class="ind-card-desc">Predictive maintenance, quality inspection with vision AI, and smart supply chain.</p>
+      </div>
+      <div class="ind-card">
+        <div class="ind-card-icon">📚</div>
+        <div class="ind-card-name">EdTech</div>
+        <p class="ind-card-desc">Adaptive learning engines, AI tutors, automated assessment, and learning analytics.</p>
+      </div>
+      <div class="ind-card">
+        <div class="ind-card-icon">🚚</div>
+        <div class="ind-card-name">Logistics</div>
+        <p class="ind-card-desc">Route optimisation, last-mile AI, warehouse automation, and real-time visibility.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── TESTIMONIALS ── -->
+<section id="testimonials">
+  <div class="testi-head">
+    <span class="section-tag">Client Stories</span>
+    <h2 class="section-title">Outcomes, Not Promises</h2>
+    <p class="section-sub" style="margin:0 auto">We measure success by the numbers our clients report back.</p>
+  </div>
+  <div class="testi-grid">
+    <div class="testi-card">
+      <div class="stars">★★★★★</div>
+      <p class="testi-quote">"The team built our fraud detection pipeline in 6 weeks. False positives dropped 73% and our compliance team finally stopped firefighting. Exceptional."</p>
+      <div class="testi-author">
+        <div class="testi-avatar">AR</div>
+        <div>
+          <div class="testi-name">Arjun Reddy</div>
+          <div class="testi-role">CTO, CapitalFlow Fintech</div>
+        </div>
+      </div>
+    </div>
+    <div class="testi-card">
+      <div class="stars">★★★★★</div>
+      <p class="testi-quote">"We were drowning in unstructured medical records. Their clinical NLP system now extracts structured data with 96% accuracy. It changed how we operate."</p>
+      <div class="testi-author">
+        <div class="testi-avatar">SK</div>
+        <div>
+          <div class="testi-name">Dr. Sneha Kumar</div>
+          <div class="testi-role">Head of Digital, MedNova India</div>
+        </div>
+      </div>
+    </div>
+    <div class="testi-card">
+      <div class="stars">★★★★★</div>
+      <p class="testi-quote">"Migrated our legacy monolith to a Kubernetes microservices architecture with zero downtime. The team's communication and technical depth is unlike any vendor I've worked with."</p>
+      <div class="testi-author">
+        <div class="testi-avatar">JM</div>
+        <div>
+          <div class="testi-name">James Molloy</div>
+          <div class="testi-role">VP Engineering, LogiFlow UK</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── CTA ── -->
+<section id="cta">
+  <h2 class="cta-title">Ready to Build<br />Something Intelligent?</h2>
+  <p class="cta-sub">Tell us your challenge. In 48 hours, we'll come back with a technical proposal — no fluff, no NDAs required upfront.</p>
+  <div class="cta-actions">
+    <a href="mailto:info@uvix.co.in" class="btn-primary">
+      Book a Free Discovery Call
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    </a>
+    <a href="#services" class="btn-ghost">View Case Studies</a>
+  </div>
+</section>
+
+<!-- ── FOOTER ── -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <a class="nav-logo" href="#">Uvix Technologies</a>
+      <p>AI-integrated IT services for companies serious about intelligent transformation. Bangalore · London · New York.</p>
+    </div>
+    <div class="footer-col">
+      <h5>Services</h5>
+      <ul>
+        <li><a href="#">AI & ML Engineering</a></li>
+        <li><a href="#">Cloud Infrastructure</a></li>
+        <li><a href="#">Data Engineering</a></li>
+        <li><a href="#">Cybersecurity</a></li>
+        <li><a href="#">Product Development</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Company</h5>
+      <ul>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Careers</a></li>
+        <li><a href="#">Blog</a></li>
+        <li><a href="#">Research</a></li>
+        <li><a href="#">Partners</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Contact</h5>
+      <ul>
+        <li><a href="#">info@uvix.co.in</a></li>
+        <li><a href="#">Bangalore, IN</a></li>
+        <li><a href="#">London, UK</a></li>
+        <li><a href="#">New York, US</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 Uvix Technologies All rights reserved.</span>
+    <div class="footer-socials">
+      <a href="#">LinkedIn</a>
+      <a href="#">Twitter / X</a>
+      <a href="#">GitHub</a>
+      <a href="#">Privacy Policy</a>
+    </div>
+  </div>
+</footer>
+
+<!-- ── HERO CANVAS ANIMATION ── -->
+<script>
+(function(){
+  const canvas = document.getElementById('hero-canvas');
+  const ctx = canvas.getContext('2d');
+  let W, H, nodes, raf;
+
+  function resize(){
+    W = canvas.width = canvas.offsetWidth;
+    H = canvas.height = canvas.offsetHeight;
+  }
+
+  function makeNodes(){
+    nodes = Array.from({length: 60}, ()=>({
+      x: Math.random()*W, y: Math.random()*H,
+      vx: (Math.random()-.5)*.35, vy: (Math.random()-.5)*.35,
+      r: Math.random()*2+1,
+      hue: Math.random()<.5 ? 'indigo' : 'cyan'
+    }));
+  }
+
+  function draw(){
+    ctx.clearRect(0,0,W,H);
+    // edges
+    for(let i=0;i<nodes.length;i++){
+      for(let j=i+1;j<nodes.length;j++){
+        const dx=nodes[i].x-nodes[j].x, dy=nodes[i].y-nodes[j].y;
+        const d=Math.sqrt(dx*dx+dy*dy);
+        if(d<130){
+          ctx.beginPath();
+          ctx.moveTo(nodes[i].x, nodes[i].y);
+          ctx.lineTo(nodes[j].x, nodes[j].y);
+          ctx.strokeStyle=`rgba(79,70,229,${(1-d/130)*.18})`;
+          ctx.lineWidth=.7;
+          ctx.stroke();
+        }
+      }
+    }
+    // nodes
+    nodes.forEach(n=>{
+      ctx.beginPath();
+      ctx.arc(n.x, n.y, n.r, 0, Math.PI*2);
+      ctx.fillStyle = n.hue==='cyan' ? 'rgba(6,182,212,.55)' : 'rgba(99,102,241,.55)';
+      ctx.fill();
+      n.x += n.vx; n.y += n.vy;
+      if(n.x<0||n.x>W) n.vx*=-1;
+      if(n.y<0||n.y>H) n.vy*=-1;
+    });
+    raf = requestAnimationFrame(draw);
+  }
+
+  window.addEventListener('resize', ()=>{ resize(); makeNodes(); });
+  resize(); makeNodes(); draw();
+
+  if(window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+    cancelAnimationFrame(raf);
+    ctx.clearRect(0,0,W,H);
+  }
+})();
+</script>
+
+</body>
+</html>
