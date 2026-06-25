@@ -76,13 +76,63 @@ export const processSteps = [
   },
 ];
 
+export const aiMlTopCapabilities = [
+  { name: 'LLM Applications', detail: 'Custom copilots, chat assistants, and domain-specific AI agents.' },
+  { name: 'RAG Systems', detail: 'Grounded answers by connecting models to your internal knowledge and data.' },
+  { name: 'NLP Workflows', detail: 'Summarization, extraction, classification, and multilingual understanding.' },
+  { name: 'Computer Vision', detail: 'Image recognition, OCR, anomaly detection, and visual inspection systems.' },
+  { name: 'Predictive Analytics', detail: 'Forecasting, churn modelling, risk scoring, and recommendation engines.' },
+  { name: 'Speech & Audio AI', detail: 'Voice assistants, transcription, conversation intelligence, and voicebots.' },
+  { name: 'Multimodal AI', detail: 'Combining text, images, video, and structured data in one experience.' },
+  { name: 'MLOps Pipelines', detail: 'Model training, deployment, monitoring, experiment tracking, and governance.' },
+  { name: 'Agentic Automation', detail: 'Autonomous workflows that reason, decide, and trigger actions safely.' },
+  { name: 'Responsible AI', detail: 'Bias monitoring, observability, security controls, and compliance guardrails.' },
+];
+
+export const aiMlTechGroup = {
+  title: 'AI / ML',
+  items: [
+    { name: 'PyTorch', icon: 'pytorch' },
+    { name: 'TensorFlow', icon: 'tensorflow' },
+    { name: 'Hugging Face', icon: 'huggingface' },
+    { name: 'OpenAI APIs', icon: 'openai' },
+    { name: 'LangChain', icon: 'langchain' },
+    { name: 'LlamaIndex', icon: 'llamaindex' },
+    { name: 'scikit-learn', icon: 'scikitlearn' },
+    { name: 'MLflow', icon: 'mlflow' },
+    { name: 'ONNX', icon: 'onnx' },
+    { name: 'Vector DBs', icon: 'vector' },
+  ],
+};
+
+export const cloudDataTechGroup = {
+  title: 'Cloud & Data',
+  items: [
+    { name: 'AWS', icon: 'aws' },
+    { name: 'Azure', icon: 'azure' },
+    { name: 'Google Cloud', icon: 'gcp' },
+    { name: 'Oracle', icon: 'oracle' },
+    { name: 'Kubernetes', icon: 'kubernetes' },
+    { name: 'Docker', icon: 'docker' },
+    { name: 'MongoDB', icon: 'mongodb' },
+    { name: 'PostgreSQL', icon: 'postgresql' },
+    { name: 'SQL Server', icon: 'sqlserver' },
+    { name: 'Redis', icon: 'redis' },
+    { name: 'Git / GitHub', icon: 'git' },
+  ],
+};
+
 export const technologyGroups = [
   {
     title: 'Frontend',
     items: [
       { name: 'React', icon: 'react' },
       { name: 'Next.js', icon: 'nextjs' },
+      { name: 'Angular', icon: 'angular' },
       { name: 'TypeScript', icon: 'typescript' },
+      { name: 'HTML5', icon: 'html' },
+      { name: 'CSS3', icon: 'css' },
+      { name: 'JavaScript', icon: 'javascript' },
     ],
   },
   {
@@ -91,26 +141,10 @@ export const technologyGroups = [
       { name: 'Node.js', icon: 'node' },
       { name: 'Python', icon: 'python' },
       { name: 'FastAPI', icon: 'fastapi' },
-    ],
-  },
-  {
-    title: 'AI / ML',
-    items: [
-      { name: 'PyTorch', icon: 'pytorch' },
-      { name: 'TensorFlow', icon: 'tensorflow' },
-    ],
-  },
-  {
-    title: 'Cloud & Data',
-    items: [
-      { name: 'AWS', icon: 'aws' },
-      { name: 'Azure', icon: 'azure' },
-      { name: 'Google Cloud', icon: 'gcp' },
-      { name: 'Kubernetes', icon: 'kubernetes' },
-      { name: 'Docker', icon: 'docker' },
-      { name: 'MongoDB', icon: 'mongodb' },
-      { name: 'PostgreSQL', icon: 'postgresql' },
-      { name: 'Redis', icon: 'redis' },
+      { name: '.NET', icon: 'dotnet' },
+      { name: '.NET Core', icon: 'dotnet' },
+      { name: 'ASP.NET', icon: 'aspnet' },
+      { name: 'REST APIs', icon: 'api' },
     ],
   },
 ];
@@ -118,6 +152,7 @@ export const technologyGroups = [
 export const featuredStack = [
   { name: 'Next.js', icon: 'nextjs', detail: 'Frontend platform for fast, SEO-friendly product experiences' },
   { name: 'Python', icon: 'python', detail: 'Core engine for automation, analytics, and AI services' },
+  { name: '.NET', icon: 'dotnet', detail: 'Enterprise-ready backend for secure, scalable business systems' },
   { name: 'AWS', icon: 'aws', detail: 'Reliable cloud foundation for scalable infrastructure' },
   { name: 'PyTorch', icon: 'pytorch', detail: 'Model development and experimentation for intelligent systems' },
 ];

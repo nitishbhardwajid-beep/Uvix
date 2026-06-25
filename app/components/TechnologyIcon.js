@@ -25,6 +25,13 @@ export default function TechnologyIcon({ icon, className = '' }) {
         <path d="M19 19h-3" />
       </svg>
     ),
+    angular: (
+      <svg {...sharedProps} className={className}>
+        <path d="M12 4 4 7l1.5 10 6.5 3 6.5-3L20 7 12 4Z" />
+        <path d="m7.5 16 4.5-10 4.5 10" />
+        <path d="m8.5 14 3.5-7 3.5 7" />
+      </svg>
+    ),
     typescript: (
       <svg {...sharedProps} className={className}>
         <rect x="4" y="4" width="16" height="16" rx="2" />
@@ -59,6 +66,68 @@ export default function TechnologyIcon({ icon, className = '' }) {
         <path d="M8 5 4 7v10l4 2 4-2V7L8 5Z" />
         <path d="M16 5l4 2v10l-4 2-4-2V7l4-2Z" />
         <path d="M12 5v14" />
+      </svg>
+    ),
+    huggingface: (
+      <svg {...sharedProps} className={className}>
+        <path d="M7 6h10" />
+        <path d="M7 12h10" />
+        <path d="M7 18h10" />
+        <circle cx="9" cy="12" r="1.5" />
+        <circle cx="15" cy="12" r="1.5" />
+      </svg>
+    ),
+    openai: (
+      <svg {...sharedProps} className={className}>
+        <path d="M12 4 8 6l4 2 4-2-4-2Z" />
+        <path d="M8 6v12l4 2 4-2V6" />
+        <path d="M8 10v4" />
+        <path d="M16 10v4" />
+      </svg>
+    ),
+    langchain: (
+      <svg {...sharedProps} className={className}>
+        <path d="M6 7h12" />
+        <path d="M6 17h12" />
+        <path d="M9 7v10" />
+        <path d="M15 7v10" />
+      </svg>
+    ),
+    llamaindex: (
+      <svg {...sharedProps} className={className}>
+        <rect x="4" y="5" width="16" height="14" rx="2" />
+        <path d="M8 10h8" />
+        <path d="M8 14h5" />
+      </svg>
+    ),
+    scikitlearn: (
+      <svg {...sharedProps} className={className}>
+        <path d="M7 6h10" />
+        <path d="M7 18h10" />
+        <path d="M10 6v12" />
+        <path d="M14 6v12" />
+      </svg>
+    ),
+    mlflow: (
+      <svg {...sharedProps} className={className}>
+        <circle cx="12" cy="12" r="8" />
+        <path d="M8 12h8" />
+        <path d="M10 9l2 3 2-3" />
+      </svg>
+    ),
+    onnx: (
+      <svg {...sharedProps} className={className}>
+        <rect x="5" y="5" width="14" height="14" rx="2" />
+        <path d="M8 8h8" />
+        <path d="M8 16h8" />
+      </svg>
+    ),
+    vector: (
+      <svg {...sharedProps} className={className}>
+        <path d="M7 8h10" />
+        <path d="M7 16h10" />
+        <path d="M10 8v8" />
+        <path d="M14 8v8" />
       </svg>
     ),
     pytorch: (
@@ -129,6 +198,74 @@ export default function TechnologyIcon({ icon, className = '' }) {
         <path d="M9 8a4 4 0 0 0 0 8" />
         <path d="M15 8a4 4 0 0 1 0 8" />
         <path d="M7 12h10" />
+      </svg>
+    ),
+    oracle: (
+      <svg {...sharedProps} className={className}>
+        <ellipse cx="12" cy="12" rx="6" ry="8" />
+        <path d="M8 10c0-2.2 1.8-4 4-4h.5c2.2 0 4 1.8 4 4v4c0 2.2-1.8 4-4 4H12c-2.2 0-4-1.8-4-4v-4Z" />
+      </svg>
+    ),
+    git: (
+      <svg {...sharedProps} className={className}>
+        <circle cx="12" cy="12" r="7" />
+        <path d="M12 8v8" />
+        <path d="M8 12h8" />
+      </svg>
+    ),
+    sqlserver: (
+      <svg {...sharedProps} className={className}>
+        <rect x="4" y="5" width="16" height="14" rx="2" />
+        <path d="M8 9h8" />
+        <path d="M8 13h8" />
+        <path d="M8 17h5" />
+      </svg>
+    ),
+    html: (
+      <svg {...sharedProps} className={className}>
+        <path d="M5 4l1.5 14 6.5 2 6.5-2L19 4H5Z" />
+        <path d="M8 8h8" />
+        <path d="M7.5 12h9" />
+      </svg>
+    ),
+    css: (
+      <svg {...sharedProps} className={className}>
+        <path d="M5 4l1.5 14 6.5 2 6.5-2L19 4H5Z" />
+        <path d="M8 8h8" />
+        <path d="M9 12h6" />
+        <path d="M8.5 16h7" />
+      </svg>
+    ),
+    javascript: (
+      <svg {...sharedProps} className={className}>
+        <rect x="4" y="4" width="16" height="16" rx="2" />
+        <path d="M8 8h3" />
+        <path d="M8 16h3" />
+        <path d="M13 8h3" />
+        <path d="M13 16h3" />
+      </svg>
+    ),
+    dotnet: (
+      <svg {...sharedProps} className={className}>
+        <path d="M6 8h12" />
+        <path d="M6 16h12" />
+        <path d="M8 8v8" />
+        <path d="M16 8v8" />
+      </svg>
+    ),
+    aspnet: (
+      <svg {...sharedProps} className={className}>
+        <rect x="4" y="5" width="16" height="14" rx="2" />
+        <path d="M8 9h8" />
+        <path d="M8 13h5" />
+      </svg>
+    ),
+    api: (
+      <svg {...sharedProps} className={className}>
+        <rect x="4" y="5" width="16" height="14" rx="2" />
+        <path d="M8 10h8" />
+        <path d="M8 14h5" />
+        <path d="M15 14l2-2-2-2" />
       </svg>
     ),
     default: (
