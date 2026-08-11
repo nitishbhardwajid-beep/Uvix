@@ -1,7 +1,9 @@
 import Link from 'next/link';
 import SiteLayout from '../components/SiteLayout';
 import PageSection from '../components/PageSection';
-import { services } from '../data/siteContent';
+import { pageMetadata, services } from '../data/siteContent';
+
+export const metadata = pageMetadata.services;
 
 export default function ServicesPage() {
   return (

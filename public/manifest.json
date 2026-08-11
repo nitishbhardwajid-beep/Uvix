@@ -1,0 +1,44 @@
+{
+  "name": "Uvix Technologies - AI & Cloud Solutions",
+  "short_name": "Uvix",
+  "description": "Enterprise AI & ML engineering, cloud infrastructure, and intelligent automation services.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "theme_color": "#050B18",
+  "background_color": "#050B18",
+  "icons": [
+    {
+      "src": "/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icon-maskable.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "/screenshot-540.png",
+      "sizes": "540x720",
+      "type": "image/png"
+    },
+    {
+      "src": "/screenshot-1080.png",
+      "sizes": "1080x1440",
+      "type": "image/png"
+    }
+  ],
+  "categories": ["business", "technology"]
+}

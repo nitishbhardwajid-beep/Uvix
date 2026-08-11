@@ -1,0 +1,21 @@
+# Uvix Technologies - Robots.txt
+# Allow search engines to crawl all pages
+
+User-agent: *
+Allow: /
+Disallow: /.next/
+Disallow: /api/
+Disallow: /__nextjs_original-stack-frame
+Crawl-delay: 1
+
+# Specific rules for Google
+User-agent: Googlebot
+Allow: /
+Disallow: /.next/
+
+# Specific rules for Bing
+User-agent: Bingbot
+Allow: /
+Disallow: /.next/
+
+Sitemap: https://uvix.co.in/sitemap.xml

@@ -1,7 +1,9 @@
 import SiteLayout from '../components/SiteLayout';
 import PageSection from '../components/PageSection';
 import TechnologyIcon from '../components/TechnologyIcon';
-import { aiMlTechGroup, aiMlTopCapabilities, cloudDataTechGroup, featuredStack, technologyGroups } from '../data/siteContent';
+import { aiMlTechGroup, aiMlTopCapabilities, cloudDataTechGroup, featuredStack, pageMetadata, technologyGroups } from '../data/siteContent';
+
+export const metadata = pageMetadata.technologies;
 
 export default function TechnologiesPage() {
   return (

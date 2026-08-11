@@ -1,6 +1,8 @@
 import SiteLayout from '../components/SiteLayout';
 import PageSection from '../components/PageSection';
-import { processSteps } from '../data/siteContent';
+import { pageMetadata, processSteps } from '../data/siteContent';
+
+export const metadata = pageMetadata.process;
 
 export default function ProcessPage() {
   return (

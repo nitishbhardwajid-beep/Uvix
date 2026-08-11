@@ -1,7 +1,9 @@
 import Link from 'next/link';
 import SiteLayout from '../components/SiteLayout';
 import PageSection from '../components/PageSection';
-import { testimonials } from '../data/siteContent';
+import { pageMetadata, testimonials } from '../data/siteContent';
+
+export const metadata = pageMetadata.clients;
 
 export default function ClientsPage() {
   return (

@@ -1,7 +1,10 @@
 import Link from 'next/link';
 import SiteLayout from '../components/SiteLayout';
 import PageSection from '../components/PageSection';
+import { pageMetadata } from '../data/siteContent';
 import { contactDetails } from '../shared/content';
+
+export const metadata = pageMetadata.contact;
 
 export default function ContactPage() {
   return (

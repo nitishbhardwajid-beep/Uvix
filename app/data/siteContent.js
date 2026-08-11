@@ -1,3 +1,34 @@
+export const pageMetadata = {
+  home: {
+    title: 'Uvix Technologies — AI-Powered IT Services & Intelligent Solutions',
+    description: 'Enterprise AI & ML engineering, cloud infrastructure, and intelligent automation. Custom LLM products, model development, and MLOps pipelines.',
+  },
+  services: {
+    title: 'Services — Uvix Technologies | AI & Cloud Solutions',
+    description: 'AI & Machine Learning · Cloud Infrastructure · Cybersecurity · Data Engineering · Product Development. Enterprise-grade solutions.',
+  },
+  technologies: {
+    title: 'Technology Stack — Uvix Technologies | Next.js · Python · AWS',
+    description: 'Modern tech stack: Next.js, Python, FastAPI, .NET, PyTorch, TensorFlow, AWS, Azure, Oracle. Enterprise tools for AI products.',
+  },
+  process: {
+    title: 'How We Work — Uvix Technologies | Agile AI Delivery',
+    description: 'Delivery model: Discovery & Audit → Architecture & Prototyping → Agile Delivery → Monitor & Scale. Fast, reliable, intelligent.',
+  },
+  industries: {
+    title: 'Industries — Uvix Technologies | FinTech · HealthTech · AI',
+    description: 'Vertical expertise: FinTech, HealthTech, Retail, Manufacturing, EdTech, Logistics. Deep domain knowledge for contextual AI.',
+  },
+  clients: {
+    title: 'Clients & Case Studies — Uvix Technologies',
+    description: 'Trusted by enterprise clients globally. See how we transformed businesses with AI and intelligent automation.',
+  },
+  contact: {
+    title: 'Get Started — Uvix Technologies | Free Discovery Call',
+    description: 'Book a free 30-min discovery call. No NDAs required. In 48 hours, a technical proposal for your AI transformation.',
+  },
+};
+
 export const navItems = [
   { href: '/services', label: 'Services' },
   { href: '/process', label: 'How We Work' },

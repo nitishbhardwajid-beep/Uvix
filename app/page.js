@@ -1,10 +1,10 @@
-'use client';
-
 import Link from 'next/link';
 import HeroCanvas from './components/HeroCanvas';
 import SiteLayout from './components/SiteLayout';
 import TechnologyIcon from './components/TechnologyIcon';
-import { aiMlTechGroup, aiMlTopCapabilities, cloudDataTechGroup, featuredStack, heroStats, industries, processSteps, services, technologyGroups, testimonials } from './data/siteContent';
+import { aiMlTechGroup, aiMlTopCapabilities, cloudDataTechGroup, featuredStack, heroStats, industries, pageMetadata, processSteps, services, technologyGroups, testimonials } from './data/siteContent';
+
+export const metadata = pageMetadata.home;
 
 export default function HomePage() {
   return (

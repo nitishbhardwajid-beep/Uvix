@@ -1,6 +1,8 @@
 import SiteLayout from '../components/SiteLayout';
 import PageSection from '../components/PageSection';
-import { industries } from '../data/siteContent';
+import { pageMetadata, industries } from '../data/siteContent';
+
+export const metadata = pageMetadata.industries;
 
 export default function IndustriesPage() {
   return (
