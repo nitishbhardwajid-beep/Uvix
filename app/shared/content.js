@@ -46,7 +46,7 @@ export const pageMetadata = {
 };
 
 export const contactDetails = {
-  email: 'info@uvix.co.in',
+  email: 'info@uvix.in',
   phone: '+91 00000 00000',
   ctaLabel: 'Book a Free Discovery Call',
 };

@@ -72,7 +72,7 @@ export default function RootLayout({ children }) {
               contact: {
                 '@type': 'ContactPoint',
                 contactType: 'Customer Service',
-                email: 'info@uvix.co.in',
+                email: 'info@uvix.in',
                 telephone: '+91-XXXXXXXXXX',
               },
               areaServed: ['IN', 'GB', 'US'],

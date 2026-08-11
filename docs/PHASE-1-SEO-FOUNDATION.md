@@ -31,7 +31,7 @@ Implemented Organization schema with:
 - ✅ Logo: ${siteUrl}/logo.png
 - ✅ Description: Full company description
 - ✅ sameAs links: LinkedIn, Twitter, GitHub
-- ✅ ContactPoint: Email (info@uvix.co.in), Phone (+91-XXXXXXXXXX)
+- ✅ ContactPoint: Email (info@uvix.in), Phone (+91-XXXXXXXXXX)
 - ✅ areaServed: ["IN", "GB", "US"]
 - ✅ knowsAbout: 5 core competencies
 

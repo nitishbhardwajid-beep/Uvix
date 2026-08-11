@@ -48,7 +48,7 @@ export default function SiteLayout({ children, title, description }) {
           <div className="footer-col">
             <h5>Contact</h5>
             <ul>
-              <li><a href="mailto:info@uvix.co.in">info@uvix.co.in</a></li>
+              <li><a href="mailto:info@uvix.in">info@uvix.in</a></li>
               <li><a href="#">Bangalore, IN</a></li>
               <li><a href="#">London, UK</a></li>
               <li><a href="#">New York, US</a></li>
