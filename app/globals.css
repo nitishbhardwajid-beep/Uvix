@@ -52,6 +52,8 @@ nav { flex-wrap: nowrap; }
   -webkit-background-clip: text; -webkit-text-fill-color: transparent; text-decoration: none;
 }
   .site-logo { height: 36px; display: inline-block; }
+  .logo-compact { display: none; height: 36px; }
+  .footer-logo { height: 40px; display: block; }
   .theme-toggle { background: transparent; border: 1px solid var(--border); color: var(--slate-l); padding: .4rem .6rem; border-radius: 6px; cursor: pointer; }
   .theme-toggle:hover { color: var(--white); }
   .nav-actions { display: flex; gap: .5rem; align-items: center; }
@@ -179,6 +181,13 @@ footer { background: var(--navy); border-top: 1px solid var(--border); padding: 
 .footer-socials a:hover { color: var(--white); }
 @media (max-width: 900px) { .process-layout { grid-template-columns: 1fr; } .process-visual { position: static; } .ind-layout { grid-template-columns: 1fr; } .footer-grid { grid-template-columns: 1fr 1fr; } }
 @media (max-width: 640px) { .nav-links { display: none; } .hero-stats { gap: 2rem; } .ind-cards { grid-template-columns: 1fr; } .footer-grid { grid-template-columns: 1fr; } .footer-bottom { flex-direction: column; text-align: center; } }
+
+/* Responsive logo: show compact on small screens */
+@media (max-width: 720px) {
+  .logo-full { display: none; }
+  .logo-compact { display: inline-block; }
+  .site-logo { height: 32px; }
+}
 
 @media (max-width: 640px) {
   .nav-toggle { display: block; }

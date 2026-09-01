@@ -30,7 +30,10 @@ export default function SiteLayout({ children, title, description }) {
       <nav>
         <Link className="nav-logo" href="/">
           {logoVisible ? (
-            <img src={themeLight ? '/uvix-logo-dark.svg' : '/uvix-logo.svg'} alt="Uvix Technologies" className="site-logo" onError={() => setLogoVisible(false)} />
+            <>
+              <img src={themeLight ? '/uvix-logo-dark.svg' : '/uvix-logo.svg'} alt="Uvix Technologies" className="site-logo logo-full" onError={() => setLogoVisible(false)} />
+              <img src={themeLight ? '/uvix-logo-compact.svg' : '/uvix-logo-compact.svg'} alt="Uvix" className="site-logo logo-compact" onError={() => {}} />
+            </>
           ) : (
             'Uvix Technologies'
           )}
@@ -60,7 +63,9 @@ export default function SiteLayout({ children, title, description }) {
       <footer>
         <div className="footer-grid">
           <div className="footer-brand">
-            <Link className="nav-logo" href="/">Uvix Technologies</Link>
+            <Link className="nav-logo" href="/">
+              <img src="/uvix-logo-compact.svg" alt="Uvix Technologies" className="footer-logo" />
+            </Link>
             <p>AI engineering and cloud services focused on measurable outcomes. Bangalore · Germany.</p>
           </div>
           <div className="footer-col">
