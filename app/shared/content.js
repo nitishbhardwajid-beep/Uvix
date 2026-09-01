@@ -2,7 +2,7 @@ export const siteMeta = {
   title: 'Uvix Technologies — AI Engineering & Cloud Solutions',
   description: 'Production machine learning systems, custom LLM products, and cloud platforms that improve operational metrics and accelerate product delivery.',
   companyName: 'Uvix Technologies',
-  location: 'Bangalore · London, UK · New York, US',
+  location: 'Bangalore · Germany',
   siteUrl: 'https://uvix.co.in',
   keywords: 'AI services, machine learning, cloud infrastructure, LLM development, MLOps, data engineering, intelligent automation',
 };
