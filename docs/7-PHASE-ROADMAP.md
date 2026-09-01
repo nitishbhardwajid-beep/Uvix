@@ -100,7 +100,7 @@ seamlessly into your business, drive measurable results, and scale reliably.
 
 **Founded:** 2018
 **Headquartered:** Bangalore, India
-**Offices:** London, New York
+**Offices:** London, UK; New York, US
 **Team Size:** 40+ AI Engineers
 **Industry Recognition:** [TBD - add awards/certifications]
 
