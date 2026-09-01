@@ -1,6 +1,7 @@
 import fs from 'fs';
 import path from 'path';
 import nodemailer from 'nodemailer';
+const Sentry = require('../../../lib/sentry');
 
 export async function POST(req) {
   try {
@@ -52,8 +53,10 @@ export async function POST(req) {
     const log = (level, message, extra = {}) => {
       const out = { time: new Date().toISOString(), level, message, ...extra };
       try { fs.appendFileSync(path.join(process.cwd(), 'data', 'server.log'), JSON.stringify(out) + '\n'); } catch (e) { console.error('Failed to write log', e); }
-      if (level === 'error') console.error(JSON.stringify(out));
-      else console.log(JSON.stringify(out));
+      if (level === 'error') {
+        console.error(JSON.stringify(out));
+        if (Sentry && typeof Sentry.captureException === 'function') Sentry.captureException(new Error(message));
+      } else console.log(JSON.stringify(out));
     };
 
     const sleep = (ms) => new Promise((res) => setTimeout(res, ms));
