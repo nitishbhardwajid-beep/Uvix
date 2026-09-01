@@ -6,6 +6,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
+    "generate:logos": "node scripts/generate-logo-pngs.js"
     "lint": "next lint",
     "send-test-email": "node scripts/sendTestEmail.js",
     "retry-email-failures": "node scripts/retryEmailFailures.js"

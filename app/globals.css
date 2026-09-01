@@ -6,9 +6,9 @@
   --indigo-l: #6366F1;
   --cyan: #06B6D4;
   --cyan-l: #22D3EE;
-  --white: #F0F4FF;
-  --slate: #8892A4;
-  --slate-l: #B4BCCC;
+  --white: #F8FAFC; /* page text light */
+  --slate: #E6EEF8; /* lighter slate for small text on dark bg */
+  --slate-l: #CED8E5;
   --border: rgba(255,255,255,0.07);
 }
 
@@ -22,8 +22,8 @@
     --cyan: #0891b2;
     --cyan-l: #06b6d4;
     --white: #0b1220;
-    --slate: #475569;
-    --slate-l: #6b7280;
+    --slate: #1f2937; /* darker slate for adequate contrast on white */
+    --slate-l: #4b5563;
     --border: rgba(11,18,32,0.06);
   }
 
@@ -96,6 +96,7 @@ nav { flex-wrap: nowrap; }
 }
   .site-logo { height: 36px; display: inline-block; }
   .logo-compact { display: none; height: 36px; }
+  .logo-stacked { display: none; height: 44px; }
   .footer-logo { height: 40px; display: block; }
   .theme-toggle { background: transparent; border: 1px solid var(--border); color: var(--slate-l); padding: .4rem .6rem; border-radius: 6px; cursor: pointer; }
   .theme-toggle:hover { color: var(--white); }
@@ -229,7 +230,16 @@ footer { background: var(--navy); border-top: 1px solid var(--border); padding: 
 @media (max-width: 720px) {
   .logo-full { display: none; }
   .logo-compact { display: inline-block; }
+  .logo-stacked { display: none; }
   .site-logo { height: 32px; }
+}
+
+/* show stacked logo in very narrow headers (e.g., < 420px) */
+@media (max-width: 420px) {
+  .logo-full { display: none; }
+  .logo-compact { display: none; }
+  .logo-stacked { display: inline-block; }
+  .site-logo { height: 40px; }
 }
 
 @media (max-width: 640px) {
