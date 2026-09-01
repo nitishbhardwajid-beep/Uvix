@@ -18,6 +18,7 @@ export default function ContactPage() {
         <div className="contact-layout" style={{ display: 'grid', gridTemplateColumns: '1fr 420px', gap: '2rem', alignItems: 'start' }}>
           <div className="contact-card">
             <p>Reach us at <a href={`mailto:${contactDetails.email}`}>{contactDetails.email}</a> for a discovery conversation.</p>
+            <p style={{ marginTop: '0.5rem' }}><strong>Phone:</strong> <a href={`tel:${contactDetails.phone}`}>{contactDetails.phone}</a></p>
             <p style={{ marginTop: '0.75rem', whiteSpace: 'pre-line' }}><strong>Office:</strong><br />{contactDetails.address}</p>
             <p style={{ marginTop: '1rem' }}>Prefer a meeting? Book a free 30-minute discovery call and we'll prepare a short technical proposal.</p>
             <div className="cta-actions" style={{ justifyContent: 'flex-start', marginTop: '1.5rem' }}>
