@@ -58,10 +58,11 @@ export default function SiteLayout({ children, title, description }) {
         <div className="footer-bottom">
           <span>© 2026 Uvix Technologies. All rights reserved.</span>
           <div className="footer-socials">
-            <a href="#">LinkedIn</a>
-            <a href="#">Twitter / X</a>
-            <a href="#">GitHub</a>
-            <a href="#">Privacy Policy</a>
+            <a href="#" aria-label="LinkedIn">LinkedIn</a>
+            <a href="#" aria-label="Twitter">Twitter / X</a>
+            <a href="#" aria-label="GitHub">GitHub</a>
+            <a href="/privacy-policy.html">Privacy Policy</a>
+            <a href="/terms.html">Terms</a>
           </div>
         </div>
       </footer>
