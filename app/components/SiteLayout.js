@@ -5,13 +5,44 @@ import { useState } from 'react';
 
 export default function SiteLayout({ children, title, description }) {
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [themeLight, setThemeLight] = useState(false);
+  const [logoVisible, setLogoVisible] = useState(true);
+
+  useEffect(() => {
+    try {
+      const stored = localStorage.getItem('uvix_theme_light');
+      const isLight = stored === '1';
+      setThemeLight(isLight);
+      if (isLight) document.documentElement.classList.add('theme-light');
+      else document.documentElement.classList.remove('theme-light');
+    } catch (e) {}
+  }, []);
+
+  useEffect(() => {
+    try {
+      localStorage.setItem('uvix_theme_light', themeLight ? '1' : '0');
+      if (themeLight) document.documentElement.classList.add('theme-light');
+      else document.documentElement.classList.remove('theme-light');
+    } catch (e) {}
+  }, [themeLight]);
   return (
     <>
       <nav>
-        <Link className="nav-logo" href="/">Uvix Technologies</Link>
-        <button className="nav-toggle" aria-label="Toggle navigation" onClick={() => setMobileOpen((s) => !s)}>
-          ☰
-        </button>
+        <Link className="nav-logo" href="/">
+          {logoVisible ? (
+            <img src="/uvix-logo.png" alt="Uvix Technologies" className="site-logo" onError={() => setLogoVisible(false)} />
+          ) : (
+            'Uvix Technologies'
+          )}
+        </Link>
+        <div style={{ display: 'flex', gap: '.5rem', alignItems: 'center' }}>
+          <button className="theme-toggle" aria-label="Toggle theme" onClick={() => setThemeLight((s) => !s)}>
+            {themeLight ? 'Light' : 'Blue'}
+          </button>
+          <button className="nav-toggle" aria-label="Toggle navigation" onClick={() => setMobileOpen((s) => !s)}>
+            ☰
+          </button>
+        </div>
         <ul className={`nav-links ${mobileOpen ? 'mobile-open' : ''}`} onClick={() => setMobileOpen(false)}>
           {navItems.map((item) => (
             <li key={item.href}>
