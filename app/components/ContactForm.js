@@ -13,10 +13,31 @@ export default function ContactForm() {
     setLoading(true);
     setStatus(null);
     try {
+      // If a reCAPTCHA site key is configured, execute reCAPTCHA v3 to obtain a token.
+      let recaptchaToken = null;
+      const siteKey = process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY;
+      if (siteKey) {
+        if (!window.grecaptcha) {
+          await new Promise((resolve, reject) => {
+            const s = document.createElement('script');
+            s.src = `https://www.google.com/recaptcha/api.js?render=${siteKey}`;
+            s.async = true;
+            s.onload = resolve;
+            s.onerror = reject;
+            document.head.appendChild(s);
+          });
+        }
+        try {
+          recaptchaToken = await window.grecaptcha.execute(siteKey, { action: 'contact' });
+        } catch (recErr) {
+          console.warn('reCAPTCHA execution failed', recErr);
+        }
+      }
+
       const res = await fetch('/api/contact', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ name, email, message }),
+        body: JSON.stringify({ name, email, message, recaptchaToken }),
       });
       if (!res.ok) throw new Error('Network response was not ok');
       setStatus('ok');
@@ -48,7 +69,9 @@ export default function ContactForm() {
       </div>
       <div className="form-actions">
         <button type="submit" className="btn-primary" disabled={loading}>{loading ? 'Sending...' : 'Send Message'}</button>
-        {status === 'ok' && <span style={{ color: 'var(--cyan-l)', marginLeft: '0.75rem' }}>Thanks — we'll respond shortly.</span>}
+        <span role="status" aria-live="polite" style={{ marginLeft: '0.75rem' }}>
+          {status === 'ok' ? <span style={{ color: 'var(--cyan-l)' }}>Thanks — we'll respond shortly.</span> : null}
+        </span>
       </div>
     </form>
   );

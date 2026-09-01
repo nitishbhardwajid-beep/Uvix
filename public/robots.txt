@@ -18,4 +18,4 @@ User-agent: Bingbot
 Allow: /
 Disallow: /.next/
 
-Sitemap: https://uvix.co.in/sitemap.xml
+Sitemap: https://uvix.in/sitemap.xml

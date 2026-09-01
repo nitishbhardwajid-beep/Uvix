@@ -202,15 +202,21 @@ export const testimonials = [
     quote: 'The team built our fraud detection pipeline in 6 weeks. False positives dropped 73% and our compliance team finally stopped firefighting.',
     author: 'Arjun Reddy',
     role: 'CTO, CapitalFlow Fintech',
+    verified: false,
+    source: '',
   },
   {
     quote: 'We were drowning in unstructured medical records. Their clinical NLP system now extracts structured data with 96% accuracy.',
     author: 'Dr. Sneha Kumar',
     role: 'Head of Digital, MedNova India',
+    verified: false,
+    source: '',
   },
   {
     quote: 'Migrated our legacy monolith to a Kubernetes microservices architecture with zero downtime. The technical depth is unlike any vendor I have worked with.',
     author: 'James Molloy',
     role: 'VP Engineering, LogiFlow UK',
+    verified: false,
+    source: '',
   },
 ];

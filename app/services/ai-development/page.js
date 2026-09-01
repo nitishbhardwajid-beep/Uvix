@@ -5,7 +5,7 @@ import PageSection from '../../components/PageSection';
 export const metadata = {
   title: 'AI Development Services — Uvix Technologies',
   description: 'Custom AI solutions and ML pipelines focused on production readiness, operational reliability, and measurable business impact.',
-  canonical: 'https://uvix.co.in/services/ai-development',
+  canonical: 'https://uvix.in/services/ai-development',
 };
 
 export default function AIDevelopmentPage() {

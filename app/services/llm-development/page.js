@@ -5,7 +5,7 @@ import PageSection from '../../components/PageSection';
 export const metadata = {
   title: 'LLM Development & Fine-tuning — Uvix Technologies',
   description: 'Custom Large Language Model development, fine-tuning, and deployment. GPT-4, Claude, Llama, and open-source LLMs tailored to your domain.',
-  canonical: 'https://uvix.co.in/services/llm-development',
+  canonical: 'https://uvix.in/services/llm-development',
 };
 
 export default function LLMDevelopmentPage() {

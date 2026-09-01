@@ -81,7 +81,7 @@ git push origin main
 
 **After Deployment:**
 1. Go to project settings → "Domains"
-2. Add custom domain: `uvix.co.in`
+2. Add custom domain: `uvix.in`
 3. Update DNS with Vercel values
 4. Wait for SSL certificate (automatic)
 
@@ -106,7 +106,7 @@ vercel
 ### Submit to Search Engines
 1. **Google Search Console:**
    - Go to search.google.com/search-console
-   - Add property: https://uvix.co.in
+   - Add property: https://uvix.in
    - Verify ownership (DNS or file)
    - Submit sitemap.xml
    - Monitor indexation

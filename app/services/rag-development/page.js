@@ -5,7 +5,7 @@ import PageSection from '../../components/PageSection';
 export const metadata = {
   title: 'RAG Development — Retrieval-Augmented Generation — Uvix',
   description: 'Build RAG systems that combine LLMs with your knowledge base for accurate, contextual responses. Production-ready retrieval-augmented generation.',
-  canonical: 'https://uvix.co.in/services/rag-development',
+  canonical: 'https://uvix.in/services/rag-development',
 };
 
 export default function RAGDevelopmentPage() {

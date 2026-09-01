@@ -5,7 +5,7 @@ import PageSection from '../../components/PageSection';
 export const metadata = {
   title: 'Cybersecurity Services — Security & Compliance — Uvix',
   description: 'Cybersecurity consulting, vulnerability assessment, and security infrastructure. Protect your applications and data.',
-  canonical: 'https://uvix.co.in/services/cybersecurity',
+  canonical: 'https://uvix.in/services/cybersecurity',
 };
 
 export default function CybersecurityPage() {

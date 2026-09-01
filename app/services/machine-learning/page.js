@@ -5,7 +5,7 @@ import PageSection from '../../components/PageSection';
 export const metadata = {
   title: 'Machine Learning Development & MLOps — Uvix',
   description: 'Custom ML model development, training, and production deployment. End-to-end machine learning solutions from data to inference.',
-  canonical: 'https://uvix.co.in/services/machine-learning',
+  canonical: 'https://uvix.in/services/machine-learning',
 };
 
 export default function MachineLearningPage() {

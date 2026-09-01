@@ -5,7 +5,7 @@ import PageSection from '../../components/PageSection';
 export const metadata = {
   title: 'Computer Vision Services — Image AI Solutions — Uvix',
   description: 'Custom computer vision models for image recognition, object detection, and visual understanding. Production-ready vision AI.',
-  canonical: 'https://uvix.co.in/services/computer-vision',
+  canonical: 'https://uvix.in/services/computer-vision',
 };
 
 export default function ComputerVisionPage() {

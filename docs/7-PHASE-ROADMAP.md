@@ -100,7 +100,7 @@ seamlessly into your business, drive measurable results, and scale reliably.
 
 **Founded:** 2018
 **Headquartered:** Bangalore, India
-**Offices:** London, UK; New York, US
+**Offices:** Germany (local arrangements by request)
 **Team Size:** 40+ AI Engineers
 **Industry Recognition:** [TBD - add awards/certifications]
 
@@ -1122,7 +1122,7 @@ Comprehensive testing, validation, analytics setup, and production monitoring.
 
 ### 7.3 SEO & Indexation Validation
 **Google Search Console Setup:**
-1. Add property: https://uvix.co.in
+1. Add property: https://uvix.in
 2. Verify ownership (DNS or HTML file)
 3. Submit sitemap.xml
 4. Monitor indexation status (all pages should be indexed)
@@ -1199,7 +1199,7 @@ Long Meta Description: 0
 
 ### 7.6 Security Hardening
 **SSL/TLS:**
-- ✅ Valid SSL certificate for https://uvix.co.in
+- ✅ Valid SSL certificate for https://uvix.in
 - ✅ Auto-redirect HTTP to HTTPS
 - ✅ HSTS header set (Strict-Transport-Security)
 

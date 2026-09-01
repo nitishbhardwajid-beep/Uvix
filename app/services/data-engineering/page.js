@@ -5,7 +5,7 @@ import PageSection from '../../components/PageSection';
 export const metadata = {
   title: 'Data Engineering & ETL — Uvix Technologies',
   description: 'Data pipelines, ETL systems, and data warehouses. Build scalable data infrastructure for analytics and ML.',
-  canonical: 'https://uvix.co.in/services/data-engineering',
+  canonical: 'https://uvix.in/services/data-engineering',
 };
 
 export default function DataEngineeringPage() {

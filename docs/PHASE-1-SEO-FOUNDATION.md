@@ -27,7 +27,7 @@ Phase 1 of the comprehensive 7-phase SEO and optimization strategy has been **su
 #### B. Structured Data - JSON-LD (app/layout.js)
 Implemented Organization schema with:
 - ✅ Name: Uvix Technologies
-- ✅ URL: https://uvix.co.in
+- ✅ URL: https://uvix.in
 - ✅ Logo: ${siteUrl}/logo.png
 - ✅ Description: Full company description
 - ✅ sameAs links: LinkedIn, Twitter, GitHub
@@ -107,7 +107,7 @@ Allow: /
 User-agent: Bingbot
 Allow: /
 
-Sitemap: https://uvix.co.in/sitemap.xml
+Sitemap: https://uvix.in/sitemap.xml
 ```
 - ✅ Allows all search engines to crawl public pages
 - ✅ Blocks crawl of build artifacts (.next/)
@@ -344,11 +344,11 @@ Status: ✅ Pushed to origin/main
    - Build the site
    - Deploy to production
    - Assign domain: your-site.vercel.app
-   - Support custom domain (uvix.co.in)
+   - Support custom domain (uvix.in)
 
 ### Custom Domain Setup (After Vercel Deployment)
 1. In Vercel project settings → Domains
-2. Add custom domain: `uvix.co.in`
+2. Add custom domain: `uvix.in`
 3. Update DNS records with Vercel-provided values
 4. Wait for DNS propagation (typically 24-48 hours)
 5. SSL/TLS certificate auto-provisioned by Vercel
@@ -387,7 +387,7 @@ Before moving to Phase 2, verify:
    - Verify Organization schema validates without errors
 
 3. **Google Search Console** (search.google.com/search-console)
-   - Add property: uvix.co.in
+   - Add property: uvix.in
    - Submit sitemap.xml
    - Monitor indexation and search performance
 

@@ -5,7 +5,7 @@ import PageSection from '../../components/PageSection';
 export const metadata = {
   title: 'Web Development Services — Modern Web Applications — Uvix',
   description: 'High-performance web applications with React, Next.js, and Node.js. Scalable, secure, and user-focused web development.',
-  canonical: 'https://uvix.co.in/services/web-development',
+  canonical: 'https://uvix.in/services/web-development',
 };
 
 export default function WebDevelopmentPage() {

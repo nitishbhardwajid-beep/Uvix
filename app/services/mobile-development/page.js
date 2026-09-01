@@ -5,7 +5,7 @@ import PageSection from '../../components/PageSection';
 export const metadata = {
   title: 'Mobile App Development — iOS & Android Apps — Uvix',
   description: 'Native iOS, Android, and cross-platform mobile apps. User-focused mobile development for startup and enterprise apps.',
-  canonical: 'https://uvix.co.in/services/mobile-development',
+  canonical: 'https://uvix.in/services/mobile-development',
 };
 
 export default function MobileDevelopmentPage() {

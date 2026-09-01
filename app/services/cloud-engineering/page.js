@@ -5,7 +5,7 @@ import PageSection from '../../components/PageSection';
 export const metadata = {
   title: 'Cloud Engineering & Architecture — Scalable Cloud Solutions — Uvix',
   description: 'Enterprise cloud infrastructure design, migration, and optimization. Multi-cloud strategies for AWS, Azure, and GCP.',
-  canonical: 'https://uvix.co.in/services/cloud-engineering',
+  canonical: 'https://uvix.in/services/cloud-engineering',
 };
 
 export default function CloudEngineeringPage() {

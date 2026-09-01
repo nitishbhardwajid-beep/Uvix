@@ -13,6 +13,13 @@ Uvix is a Next.js marketing and services website for Uvix Technologies. It uses 
 
 ## Scripts
 
+- `npm run lint` - run Next.js lint
+- `npm run build` - build for production
+- `npm run start` - start production server
+- `npm run send-test-email` - run a local SMTP/SendGrid test script
+- `npm run retry-email-failures` - retry persisted failed email deliveries
+
+
 
 ## Mailer setup (production)
 
@@ -54,3 +61,16 @@ If mail sending fails, the API still stores the inquiry in `data/inquiries.json`
 ## Deployment
 
 This project is ready for deployment on Vercel from a GitHub repository. The app uses the standard Next.js build pipeline and can be deployed directly without extra build configuration.
+
+## CI / Secrets
+
+The repository includes a GitHub Actions workflow in `.github/workflows/ci.yml` that runs lint, build, Lighthouse CI, and accessibility scans. For full Lighthouse uploads and secure secrets you should add the following repository secrets in GitHub:
+
+- `LHCI_GITHUB_APP_TOKEN` (optional) — for LHCI GitHub app integration
+- `SMTP_HOST`, `SMTP_PORT`, `SMTP_SECURE`, `SMTP_USER`, `SMTP_PASS` — SMTP credentials
+- `SENDGRID_API_KEY` — SendGrid API key (if used)
+- `FROM_EMAIL`, `TO_EMAIL` — mail envelope addresses
+- `RECAPTCHA_SECRET` and `NEXT_PUBLIC_RECAPTCHA_SITE_KEY` — reCAPTCHA v3 keys
+
+Do not commit `.env` or any secrets to the repository. Use GitHub repository secrets or your hosting platform's environment management.
+

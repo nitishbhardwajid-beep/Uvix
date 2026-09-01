@@ -5,7 +5,7 @@ import PageSection from '../../components/PageSection';
 export const metadata = {
   title: 'AI Agent Development — Autonomous Intelligence — Uvix',
   description: 'Build autonomous AI agents that reason, plan, and take action. LLM-powered agents for workflow automation, customer service, and business processes.',
-  canonical: 'https://uvix.co.in/services/ai-agents',
+  canonical: 'https://uvix.in/services/ai-agents',
 };
 
 export default function AIAgentsPage() {

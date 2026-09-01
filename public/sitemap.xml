@@ -1,133 +1,139 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://uvix.co.in</loc>
+    <loc>https://uvix.in</loc>
     <lastmod>2026-08-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://uvix.co.in/services</loc>
+    <loc>https://uvix.in/services</loc>
     <lastmod>2026-08-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://uvix.co.in/services/ai-development</loc>
+    <loc>https://uvix.in/services/ai-development</loc>
     <lastmod>2026-08-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://uvix.co.in/services/llm-development</loc>
+    <loc>https://uvix.in/services/llm-development</loc>
     <lastmod>2026-08-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://uvix.co.in/services/rag-development</loc>
+    <loc>https://uvix.in/services/rag-development</loc>
     <lastmod>2026-08-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://uvix.co.in/services/ai-agents</loc>
+    <loc>https://uvix.in/services/ai-agents</loc>
     <lastmod>2026-08-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://uvix.co.in/services/machine-learning</loc>
+    <loc>https://uvix.in/services/machine-learning</loc>
     <lastmod>2026-08-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://uvix.co.in/services/computer-vision</loc>
+    <loc>https://uvix.in/services/computer-vision</loc>
     <lastmod>2026-08-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://uvix.co.in/services/saas-development</loc>
+    <loc>https://uvix.in/services/saas-development</loc>
     <lastmod>2026-08-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://uvix.co.in/services/web-development</loc>
+    <loc>https://uvix.in/services/web-development</loc>
     <lastmod>2026-08-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://uvix.co.in/services/mobile-development</loc>
+    <loc>https://uvix.in/services/mobile-development</loc>
     <lastmod>2026-08-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://uvix.co.in/services/cloud-engineering</loc>
+    <loc>https://uvix.in/services/cloud-engineering</loc>
     <lastmod>2026-08-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://uvix.co.in/services/aws</loc>
+    <loc>https://uvix.in/services/aws</loc>
     <lastmod>2026-08-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://uvix.co.in/services/devops</loc>
+    <loc>https://uvix.in/services/devops</loc>
     <lastmod>2026-08-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://uvix.co.in/services/kubernetes</loc>
+    <loc>https://uvix.in/services/kubernetes</loc>
     <lastmod>2026-08-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://uvix.co.in/services/data-engineering</loc>
+    <loc>https://uvix.in/services/data-engineering</loc>
     <lastmod>2026-08-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://uvix.co.in/services/cybersecurity</loc>
+    <loc>https://uvix.in/services/cybersecurity</loc>
     <lastmod>2026-08-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://uvix.co.in/technologies</loc>
+    <loc>https://uvix.in/technologies</loc>
     <lastmod>2026-08-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://uvix.co.in/process</loc>
+    <loc>https://uvix.in/process</loc>
     <lastmod>2026-08-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://uvix.co.in/industries</loc>
+    <loc>https://uvix.in/industries</loc>
     <lastmod>2026-08-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://uvix.co.in/clients</loc>
+    <loc>https://uvix.in/clients</loc>
     <lastmod>2026-08-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://uvix.co.in/contact</loc>
+    <loc>https://uvix.in/clients/case-studies</loc>
+    <lastmod>2026-08-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://uvix.in/contact</loc>
     <lastmod>2026-08-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>

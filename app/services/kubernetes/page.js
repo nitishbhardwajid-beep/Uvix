@@ -5,7 +5,7 @@ import PageSection from '../../components/PageSection';
 export const metadata = {
   title: 'Kubernetes Administration & Optimization — Uvix',
   description: 'Kubernetes setup, scaling, security, and optimization. Enterprise Kubernetes for containerized applications.',
-  canonical: 'https://uvix.co.in/services/kubernetes',
+  canonical: 'https://uvix.in/services/kubernetes',
 };
 
 export default function KubernetesPage() {

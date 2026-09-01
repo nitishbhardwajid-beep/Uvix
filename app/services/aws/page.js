@@ -5,7 +5,7 @@ import PageSection from '../../components/PageSection';
 export const metadata = {
   title: 'AWS Services & Consulting — Amazon Web Services Solutions — Uvix',
   description: 'AWS architecture, migration, and optimization. Expert AWS consulting for startups to enterprise deployments.',
-  canonical: 'https://uvix.co.in/services/aws',
+  canonical: 'https://uvix.in/services/aws',
 };
 
 export default function AWSPage() {

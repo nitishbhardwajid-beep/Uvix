@@ -5,7 +5,7 @@ import PageSection from '../../components/PageSection';
 export const metadata = {
   title: 'DevOps Engineering & CI/CD — Uvix Technologies',
   description: 'DevOps consulting, CI/CD pipeline automation, and infrastructure as code. Streamline deployment and operations.',
-  canonical: 'https://uvix.co.in/services/devops',
+  canonical: 'https://uvix.in/services/devops',
 };
 
 export default function DevOpsPage() {

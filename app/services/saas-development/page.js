@@ -5,7 +5,7 @@ import PageSection from '../../components/PageSection';
 export const metadata = {
   title: 'SaaS Product Development — Uvix Technologies',
   description: 'Build enterprise-grade SaaS products with scalable architecture, user engagement, and global reach. Full-stack SaaS development.',
-  canonical: 'https://uvix.co.in/services/saas-development',
+  canonical: 'https://uvix.in/services/saas-development',
 };
 
 export default function SaaSDevelopmentPage() {
