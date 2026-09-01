@@ -1,12 +1,17 @@
 import Link from 'next/link';
 import { navItems } from '../data/siteContent';
+import { useState } from 'react';
 
 export default function SiteLayout({ children, title, description }) {
+  const [mobileOpen, setMobileOpen] = useState(false);
   return (
     <>
       <nav>
         <Link className="nav-logo" href="/">Uvix Technologies</Link>
-        <ul className="nav-links">
+        <button className="nav-toggle" aria-label="Toggle navigation" onClick={() => setMobileOpen((s) => !s)}>
+          ☰
+        </button>
+        <ul className={`nav-links ${mobileOpen ? 'mobile-open' : ''}`} onClick={() => setMobileOpen(false)}>
           {navItems.map((item) => (
             <li key={item.href}>
               <Link href={item.href}>{item.label}</Link>

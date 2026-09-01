@@ -49,6 +49,7 @@ export const contactDetails = {
   email: 'info@uvix.in',
   phone: '+91 9916313163',
   ctaLabel: 'Book a Free Discovery Call',
+  address: `Cabin #9, 4th Floor, AJ Coworking and Study Space,\nASR Avenue, Kasavanahalli, Choodasandra\nBangalore – 560035, Karnataka, India`,
 };
 
 export const germanyContact = {
