@@ -1,6 +1,6 @@
 import './globals.css';
 import { Inter, Syne } from 'next/font/google';
-import { siteMeta } from './shared/content';
+import { siteMeta, contactDetails } from './shared/content';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -72,10 +72,10 @@ export default function RootLayout({ children }) {
               contact: {
                 '@type': 'ContactPoint',
                 contactType: 'Customer Service',
-                email: 'info@uvix.in',
-                telephone: '+91-XXXXXXXXXX',
+                email: contactDetails.email,
+                telephone: contactDetails.phone,
               },
-              areaServed: ['IN', 'GB', 'US'],
+              areaServed: ['IN', 'DE'],
               knowsAbout: [
                 'AI & Machine Learning',
                 'Cloud Infrastructure',

@@ -50,3 +50,8 @@ export const contactDetails = {
   phone: '+91 00000 00000',
   ctaLabel: 'Book a Free Discovery Call',
 };
+
+export const germanyContact = {
+  address: 'Germany',
+  instructions: 'Please email info@uvix.in to request local contact details or meeting arrangements in Germany.',
+};
