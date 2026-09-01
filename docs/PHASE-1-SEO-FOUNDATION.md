@@ -203,7 +203,7 @@ All pages now include these high-value keywords in titles/descriptions:
 - **Bangalore** - siteContent.js siteMeta.location
 - **London** - siteContent.js siteMeta.location
 - **New York** - siteContent.js siteMeta.location
-- Global reach messaging: "12 Countries Served"
+-- Global reach messaging: verify and list actual countries served (do not publish an unverified number)
 
 #### C. Service Keywords
 - **FinTech, HealthTech, Retail** - industries page

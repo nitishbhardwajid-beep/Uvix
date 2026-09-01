@@ -39,10 +39,10 @@ export const navItems = [
 ];
 
 export const heroStats = [
-  { value: '200+', label: 'Projects Delivered' },
-  { value: '98%', label: 'Client Retention' },
-  { value: '40+', label: 'AI Engineers' },
-  { value: '12', label: 'Countries Served' },
+  { value: 'Multiple', label: 'Projects Delivered' },
+  { value: 'High', label: 'Client Retention' },
+  { value: 'Experienced', label: 'AI Engineers' },
+  { value: 'Global', label: 'Countries Served' },
 ];
 
 export const services = [

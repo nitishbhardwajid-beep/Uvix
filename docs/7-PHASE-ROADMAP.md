@@ -59,7 +59,7 @@ Establish clear, compelling positioning that differentiates Uvix from competitor
   <div class="hero-content">
     <h1>"Build Smarter Systems With Embedded Intelligence"</h1>
     <p class="subheading">
-      "Enterprise AI engineered by the experts who've built 200+ intelligent products.
+      "Enterprise AI engineered by experienced practitioners with verified client work.
       We transform your data and processes into competitive advantage."
     </p>
     <div class="hero-ctas">
@@ -67,9 +67,9 @@ Establish clear, compelling positioning that differentiates Uvix from competitor
       <button>See Our Approach</button>
     </div>
     <div class="hero-social-proof">
-      <span>✓ 98% Client Retention</span>
-      <span>✓ 40+ AI Engineers</span>
-      <span>✓ 12 Countries Served</span>
+      <span>✓ High client retention (verified)</span>
+      <span>✓ Experienced AI engineering team</span>
+      <span>✓ Global client engagements</span>
     </div>
   </div>
   <Image src="/hero-visual.svg" />
@@ -145,11 +145,9 @@ Technology Breadth  | ✓     | ✓              | ✓        | ✗
     {clientLogos.map(logo => <img src={logo} />)}
   </ClientLogos>
   
-  <div class="metrics-grid">
-    <StatCard value="200+" label="Projects Delivered" />
-    <StatCard value="98%" label="Client Retention" />
-    <StatCard value="40+" label="AI Engineers" />
-    <StatCard value="12" label="Countries Served" />
+    <div class="metrics-grid">
+    <!-- Replace with verified metrics: projects delivered, client retention, team size, countries served -->
+    <p>Metrics: (use verified client statistics or remove this section)</p>
   </div>
   
   <div class="certifications">
