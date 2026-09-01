@@ -5,13 +5,31 @@ export default function ContactForm() {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
+  const [loading, setLoading] = useState(false);
+  const [status, setStatus] = useState(null);
 
-  function handleSubmit(e) {
+  async function handleSubmit(e) {
     e.preventDefault();
-    const subject = encodeURIComponent(`Website inquiry from ${name || 'Lead'}`);
-    const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`);
-    const mailto = `mailto:info@uvix.in?subject=${subject}&body=${body}`;
-    window.location.href = mailto;
+    setLoading(true);
+    setStatus(null);
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ name, email, message }),
+      });
+      if (!res.ok) throw new Error('Network response was not ok');
+      setStatus('ok');
+      setName(''); setEmail(''); setMessage('');
+    } catch (err) {
+      // fallback to mailto
+      const subject = encodeURIComponent(`Website inquiry from ${name || 'Lead'}`);
+      const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`);
+      const mailto = `mailto:info@uvix.in?subject=${subject}&body=${body}`;
+      window.location.href = mailto;
+    } finally {
+      setLoading(false);
+    }
   }
 
   return (
@@ -29,7 +47,8 @@ export default function ContactForm() {
         <textarea id="cf-message" rows="6" value={message} onChange={(e) => setMessage(e.target.value)} required />
       </div>
       <div className="form-actions">
-        <button type="submit" className="btn-primary">Send Message</button>
+        <button type="submit" className="btn-primary" disabled={loading}>{loading ? 'Sending...' : 'Send Message'}</button>
+        {status === 'ok' && <span style={{ color: 'var(--cyan-l)', marginLeft: '0.75rem' }}>Thanks — we'll respond shortly.</span>}
       </div>
     </form>
   );
