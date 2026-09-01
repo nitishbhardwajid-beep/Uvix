@@ -29,7 +29,7 @@ export default function ServicesPage() {
       <PageSection
         eyebrow="Services"
         title="15 Specialized Services"
-        intro="From AI & ML to cloud infrastructure, we deliver enterprise-grade solutions across the full technology stack."
+          intro="From AI & ML to cloud infrastructure, we deliver engineering-focused solutions designed around measurable business outcomes."
       >
         <div className="services-grid-detailed">
           {serviceRoutes.map((service) => (

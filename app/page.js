@@ -13,13 +13,13 @@ export default function HomePage() {
         <HeroCanvas />
         <div className="hero-eyebrow">
           <span className="pulse-dot" />
-          AI-Powered IT Services
+          AI Engineering & Cloud Solutions
         </div>
         <h1 className="hero-title">
-          Build Smarter Systems<br />with <em>Embedded Intelligence</em>
+          Build Reliable AI Systems<br />with Applied Machine Learning
         </h1>
         <p className="hero-sub">
-          Uvix Technologies delivers end-to-end AI-integrated IT solutions — from cloud infrastructure to custom LLM pipelines — that make your operations faster, leaner, and future-ready.
+          We design, build, and deploy production ML systems and cloud platforms that improve operational KPIs and integrate with your product roadmap.
         </p>
         <div className="hero-actions">
           <Link href="/contact" className="btn-primary">
@@ -77,38 +77,38 @@ export default function HomePage() {
           <div className="process-visual">
             <p className="pipeline-label">Live AI Pipeline</p>
             <div className="ai-loop">
-              <div className="ai-row">
-                <div className="ai-row-icon">🗃️</div>
-                <div className="ai-row-text" style={{ flex: 1 }}>
-                  <strong>Data Ingestion</strong>
-                  Streaming 142K events / sec
-                  <div className="ai-bar"><div className="ai-bar-fill" style={{ animationDelay: '0s' }} /></div>
-                </div>
-              </div>
-              <div className="ai-row">
-                <div className="ai-row-icon">🔮</div>
-                <div className="ai-row-text" style={{ flex: 1 }}>
-                  <strong>Model Inference</strong>
-                  Latency p95 — 48ms
-                  <div className="ai-bar"><div className="ai-bar-fill" style={{ animationDelay: '.4s' }} /></div>
-                </div>
-              </div>
-              <div className="ai-row">
-                <div className="ai-row-icon">📡</div>
-                <div className="ai-row-text" style={{ flex: 1 }}>
-                  <strong>Anomaly Detection</strong>
-                  0 alerts · All systems nominal
-                  <div className="ai-bar"><div className="ai-bar-fill" style={{ animationDelay: '.8s', background: 'linear-gradient(90deg,#10B981,#06B6D4)' }} /></div>
-                </div>
-              </div>
-              <div className="ai-row">
-                <div className="ai-row-icon">🚀</div>
-                <div className="ai-row-text" style={{ flex: 1 }}>
-                  <strong>Auto-Scaling</strong>
-                  12 → 34 pods · Cost optimised
-                  <div className="ai-bar"><div className="ai-bar-fill" style={{ animationDelay: '1.2s', background: 'linear-gradient(90deg,var(--indigo),#A78BFA)' }} /></div>
-                </div>
-              </div>
+                  <div className="ai-row">
+                    <div className="ai-row-icon">🗃️</div>
+                    <div className="ai-row-text" style={{ flex: 1 }}>
+                      <strong>Data Ingestion</strong>
+                      Reliable, validated pipelines for structured and unstructured sources
+                      <div className="ai-bar"><div className="ai-bar-fill" style={{ animationDelay: '0s' }} /></div>
+                    </div>
+                  </div>
+                  <div className="ai-row">
+                    <div className="ai-row-icon">🔮</div>
+                    <div className="ai-row-text" style={{ flex: 1 }}>
+                      <strong>Model Inference</strong>
+                      Low-latency inference with production-grade monitoring
+                      <div className="ai-bar"><div className="ai-bar-fill" style={{ animationDelay: '.4s' }} /></div>
+                    </div>
+                  </div>
+                  <div className="ai-row">
+                    <div className="ai-row-icon">📡</div>
+                    <div className="ai-row-text" style={{ flex: 1 }}>
+                      <strong>Anomaly Detection</strong>
+                      Automated alerts and observability for operational reliability
+                      <div className="ai-bar"><div className="ai-bar-fill" style={{ animationDelay: '.8s', background: 'linear-gradient(90deg,#10B981,#06B6D4)' }} /></div>
+                    </div>
+                  </div>
+                  <div className="ai-row">
+                    <div className="ai-row-icon">🚀</div>
+                    <div className="ai-row-text" style={{ flex: 1 }}>
+                      <strong>Auto-Scaling</strong>
+                      Elastic infrastructure that adapts to traffic with cost controls
+                      <div className="ai-bar"><div className="ai-bar-fill" style={{ animationDelay: '1.2s', background: 'linear-gradient(90deg,var(--indigo),#A78BFA)' }} /></div>
+                    </div>
+                  </div>
             </div>
           </div>
         </div>

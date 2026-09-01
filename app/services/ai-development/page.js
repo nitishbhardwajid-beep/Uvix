@@ -4,14 +4,14 @@ import PageSection from '../../components/PageSection';
 
 export const metadata = {
   title: 'AI Development Services — Uvix Technologies',
-  description: 'Custom AI solutions, intelligent automation, and ML-powered products. Enterprise-grade AI development from concept to production.',
+  description: 'Custom AI solutions and ML pipelines focused on production readiness, operational reliability, and measurable business impact.',
   canonical: 'https://uvix.co.in/services/ai-development',
 };
 
 export default function AIDevelopmentPage() {
   return (
     <SiteLayout>
-      <PageSection eyebrow="Services" title="AI Development" intro="Build intelligent systems that solve complex business problems">
+      <PageSection eyebrow="Services" title="AI Development" intro="Build practical AI systems that solve specific business problems and integrate with your product or operations">
         <div className="service-detail">
           <section className="service-section">
             <h2>What We Do</h2>
@@ -23,10 +23,10 @@ export default function AIDevelopmentPage() {
           <section className="service-section">
             <h2>Why It Matters</h2>
             <ul className="service-benefits">
-              <li><strong>Competitive Advantage:</strong> AI-powered features differentiate your product in crowded markets</li>
-              <li><strong>Cost Reduction:</strong> Automate manual processes and reduce operational overhead by 40-60%</li>
-              <li><strong>Faster Time to Market:</strong> Accelerate product development with pre-built AI frameworks</li>
-              <li><strong>Better Decisions:</strong> Data-driven insights enable smarter business strategy</li>
+              <li><strong>Competitive Advantage:</strong> Custom models and features that address specific user needs</li>
+              <li><strong>Cost Efficiency:</strong> Automate repetitive workflows and reduce manual effort</li>
+              <li><strong>Faster Time to Market:</strong> Ship validated prototypes that de-risk full-scale development</li>
+              <li><strong>Better Decisions:</strong> Operational dashboards and model-backed insights to support decision making</li>
             </ul>
           </section>
 

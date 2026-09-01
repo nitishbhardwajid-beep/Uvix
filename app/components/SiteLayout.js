@@ -23,7 +23,7 @@ export default function SiteLayout({ children, title, description }) {
         <div className="footer-grid">
           <div className="footer-brand">
             <Link className="nav-logo" href="/">Uvix Technologies</Link>
-            <p>AI-integrated IT services for companies serious about intelligent transformation. Bangalore · London · New York.</p>
+            <p>AI engineering and cloud services focused on measurable outcomes. Bangalore · London · New York.</p>
           </div>
           <div className="footer-col">
             <h5>Services</h5>
