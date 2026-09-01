@@ -38,6 +38,38 @@
   .theme-light .nav-toggle, .theme-light .theme-toggle { color: var(--slate); border-color: var(--border); }
   .theme-light .nav-logo { -webkit-text-fill-color: unset; }
 
+  /* Light-theme component overrides: replace dark translucent panels with light panels */
+  .theme-light .stack-highlight-card,
+  .theme-light .ai-ml-toplist-card,
+  .theme-light .tech-special-category,
+  .theme-light .service-card,
+  .theme-light .process-visual,
+  .theme-light .ind-card,
+  .theme-light .testi-card,
+  .theme-light .service-section,
+  .theme-light .service-card-link,
+  .theme-light .service-card:hover,
+  .theme-light .service-cta,
+  .theme-light .nav-links.mobile-open {
+    background: var(--navy-2) !important;
+    border-color: rgba(11,18,32,0.04) !important;
+    color: var(--white) !important;
+  }
+
+  .theme-light .stack-highlight-card,
+  .theme-light .ai-ml-toplist-card,
+  .theme-light .tech-special-category {
+    background: var(--navy-2) !important;
+  }
+
+  .theme-light .service-icon { border-color: rgba(11,18,32,0.06); background: linear-gradient(135deg, rgba(6,182,212,.06), rgba(79,70,229,.03)); }
+
+  .theme-light .contact-form input, .theme-light .contact-form textarea {
+    background: #fff; color: var(--white); border: 1px solid rgba(11,18,32,0.06);
+  }
+
+  .theme-light .btn-ghost:hover { border-color: rgba(11,18,32,0.08); background: rgba(11,18,32,0.03); }
+
 * { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; }
 body {
