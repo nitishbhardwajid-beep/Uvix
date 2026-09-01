@@ -11,6 +11,7 @@
     "retry-email-failures": "node scripts/retryEmailFailures.js"
   },
   "dependencies": {
+    "@sentry/node": "^7.120.4",
     "dotenv": "^16.3.1",
     "next": "14.2.35",
     "node-fetch": "^2.7.0",

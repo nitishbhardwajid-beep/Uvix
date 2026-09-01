@@ -15,6 +15,15 @@ const nextConfig = {
         source: '/:path*',
         headers: [
           {
+            key: 'Strict-Transport-Security',
+            value: 'max-age=63072000; includeSubDomains; preload',
+          },
+          {
+            key: 'Content-Security-Policy',
+            value:
+              "default-src 'self'; img-src 'self' data: https:; font-src 'self' https:; connect-src 'self' https://www.google.com https://www.gstatic.com; script-src 'self' 'unsafe-inline' https://www.google.com https://www.gstatic.com; style-src 'self' 'unsafe-inline' https:; frame-src https://www.google.com;",
+          },
+          {
             key: 'X-Content-Type-Options',
             value: 'nosniff',
           },
