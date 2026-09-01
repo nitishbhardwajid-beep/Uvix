@@ -49,18 +49,18 @@ export default function SiteLayout({ children, title, description }) {
             <h5>Contact</h5>
             <ul>
               <li><a href="mailto:info@uvix.in">info@uvix.in</a></li>
-              <li><a href="#">Bangalore, IN</a></li>
-              <li><a href="#">London, UK</a></li>
-              <li><a href="#">New York, US</a></li>
+              <li><a href="/contact">Bangalore, IN</a></li>
+              <li><a href="/contact">London, UK</a></li>
+              <li><a href="/contact">New York, US</a></li>
             </ul>
           </div>
         </div>
         <div className="footer-bottom">
           <span>© 2026 Uvix Technologies. All rights reserved.</span>
           <div className="footer-socials">
-            <a href="#" aria-label="LinkedIn">LinkedIn</a>
-            <a href="#" aria-label="Twitter">Twitter / X</a>
-            <a href="#" aria-label="GitHub">GitHub</a>
+            <a href="https://linkedin.com/company/uvix-technologies" aria-label="LinkedIn" target="_blank" rel="noopener">LinkedIn</a>
+            <a href="https://twitter.com/uvix_tech" aria-label="Twitter" target="_blank" rel="noopener">Twitter / X</a>
+            <a href="https://github.com/uvix-tech" aria-label="GitHub" target="_blank" rel="noopener">GitHub</a>
             <a href="/privacy-policy.html">Privacy Policy</a>
             <a href="/terms.html">Terms</a>
           </div>
