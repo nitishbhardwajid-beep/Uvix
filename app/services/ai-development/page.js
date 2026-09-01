@@ -72,7 +72,10 @@ export default function AIDevelopmentPage() {
           <section className="service-cta">
             <h2>Ready to Build Intelligent Solutions?</h2>
             <p>Let's discuss how AI can transform your business. Book a free 30-min strategy session with our AI architects.</p>
-            <Link href="/contact" className="cta-button">Schedule a Discovery Call</Link>
+            <div style={{ display: 'flex', gap: '1rem', alignItems: 'center', justifyContent: 'center' }}>
+              <Link href="/contact" className="cta-button">Schedule a Discovery Call</Link>
+              <Link href="/clients/case-studies" className="btn-ghost">Related Case Studies</Link>
+            </div>
           </section>
         </div>
       </PageSection>
