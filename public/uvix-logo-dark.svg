@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="420" height="120" viewBox="0 0 840 240" role="img" aria-labelledby="title">
+  <title>Uvix Technologies</title>
+  <defs>
+    <linearGradient id="gd1" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#0F172A" />
+      <stop offset="100%" stop-color="#0B1220" />
+    </linearGradient>
+  </defs>
+  <g transform="translate(20,40)">
+    <text x="0" y="120" font-family="'Syne', 'Arial Black', sans-serif" font-weight="800" font-size="160" fill="url(#gd1)">UVIX</text>
+    <path d="M650 10 L720 110 L640 170 L570 70 Z" fill="#08324A" transform="translate(0,0)"/>
+  </g>
+  <text x="40" y="210" font-family="Inter, Arial, sans-serif" font-weight="700" font-size="36" fill="#0B1220" letter-spacing="6">TECHNOLOGIES</text>
+</svg>

@@ -30,7 +30,7 @@ export default function SiteLayout({ children, title, description }) {
       <nav>
         <Link className="nav-logo" href="/">
           {logoVisible ? (
-            <img src="/uvix-logo.png" alt="Uvix Technologies" className="site-logo" onError={() => setLogoVisible(false)} />
+            <img src={themeLight ? '/uvix-logo-dark.svg' : '/uvix-logo.svg'} alt="Uvix Technologies" className="site-logo" onError={() => setLogoVisible(false)} />
           ) : (
             'Uvix Technologies'
           )}
