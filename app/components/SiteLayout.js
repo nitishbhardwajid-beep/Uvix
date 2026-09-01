@@ -40,9 +40,9 @@ export default function SiteLayout({ children, title, description }) {
             <ul>
               <li><Link href="/process">About</Link></li>
               <li><Link href="/contact">Careers</Link></li>
-              <li><Link href="/clients">Blog</Link></li>
+              <li><Link href="/clients">Case Studies</Link></li>
               <li><Link href="/technologies">Research</Link></li>
-              <li><Link href="/contact">Partners</Link></li>
+              <li><Link href="/clients">Partners</Link></li>
             </ul>
           </div>
           <div className="footer-col">
