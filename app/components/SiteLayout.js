@@ -1,7 +1,7 @@
 "use client";
 import Link from 'next/link';
 import { navItems } from '../data/siteContent';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 export default function SiteLayout({ children, title, description }) {
   const [mobileOpen, setMobileOpen] = useState(false);
