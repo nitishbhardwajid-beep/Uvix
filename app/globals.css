@@ -27,6 +27,17 @@
     --border: rgba(11,18,32,0.06);
   }
 
+  /* Light-theme nav overrides for readable menu */
+  .theme-light nav {
+    background: rgba(255,255,255,0.95);
+    border-bottom: 1px solid rgba(11,18,32,0.04);
+  }
+  .theme-light .nav-links a { color: var(--slate); }
+  .theme-light .nav-links a:hover { color: var(--indigo-l); }
+  .theme-light .nav-cta { background: var(--indigo); color: #fff !important; }
+  .theme-light .nav-toggle, .theme-light .theme-toggle { color: var(--slate); border-color: var(--border); }
+  .theme-light .nav-logo { -webkit-text-fill-color: unset; }
+
 * { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; }
 body {
