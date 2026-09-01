@@ -201,8 +201,7 @@ All pages now include these high-value keywords in titles/descriptions:
 
 #### B. Location Keywords
 - **Bangalore** - siteContent.js siteMeta.location
-- **London** - siteContent.js siteMeta.location
-- **New York** - siteContent.js siteMeta.location
+- **Germany** - siteContent.js siteMeta.location
 -- Global reach messaging: verify and list actual countries served (do not publish an unverified number)
 
 #### C. Service Keywords

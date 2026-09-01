@@ -50,8 +50,7 @@ export default function SiteLayout({ children, title, description }) {
             <ul>
               <li><a href="mailto:info@uvix.in">info@uvix.in</a></li>
               <li><a href="/contact">Bangalore, IN</a></li>
-              <li><a href="/contact">London, UK</a></li>
-              <li><a href="/contact">New York, US</a></li>
+              <li><a href="/contact">Germany</a></li>
             </ul>
           </div>
         </div>
