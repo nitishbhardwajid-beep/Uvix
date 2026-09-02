@@ -147,6 +147,13 @@ nav { flex-wrap: nowrap; }
   .footer-logo-sub { font-size: .82rem; letter-spacing: .18em; }
   .footer-logo-tag { justify-content: center; }
 }
+
+/* SVG logo sizing helpers */
+.logo-svg { display: inline-block; vertical-align: middle; }
+.logo-compact { height: 44px; width: auto; }
+.logo-large { height: 160px; width: auto; }
+.logo-boxed rect { fill: var(--navy-3); }
+.logo-boxed text { fill: url(#uvixGrad); }
   .site-logo { height: 36px; display: inline-block; }
   .logo-compact { display: none; height: 36px; }
   .logo-stacked { display: none; height: 44px; }
