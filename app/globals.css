@@ -110,22 +110,28 @@ nav { flex-wrap: nowrap; }
 .footer-logo-text { font-family: var(--font-syne); font-weight: 800; font-size: 1.05rem; color: var(--white); display: flex; flex-direction: column; gap: 6px; align-items: flex-start; }
 
 /* Header compact uppercase logo */
-.site-logo-header { font-size: 1.2rem; letter-spacing: 0.01em; background: linear-gradient(135deg, var(--cyan), var(--indigo-l)); -webkit-background-clip: text; color: transparent; }
-.site-logo-header-sub { font-size: .6rem; color: var(--slate); -webkit-text-fill-color: unset; }
+.site-logo-header { font-size: 1.5rem; letter-spacing: 0.02em; background: linear-gradient(135deg, var(--cyan), var(--indigo-l)); -webkit-background-clip: text; color: transparent; }
+.site-logo-header-sub { font-size: .75rem; color: var(--slate); -webkit-text-fill-color: unset; }
 
 /* Footer large stretched logo */
-.footer-logo-main { font-family: var(--font-syne); font-weight: 900; font-size: 4.5rem; line-height: 0.9; text-transform: uppercase; color: transparent; background: linear-gradient(135deg, #0ea5d7, #4f46e5); -webkit-background-clip: text; transform-origin: left center; transform: scaleX(1.18); letter-spacing: -0.02em; }
-.footer-logo-sub { font-family: var(--font-syne); font-weight: 800; font-size: 1.15rem; letter-spacing: .36em; text-transform: uppercase; color: var(--slate); margin-top: 6px; }
-.footer-logo-tag { display: flex; align-items: center; gap: 1rem; color: var(--slate); font-style: italic; font-weight: 600; margin-top: 8px; }
+.footer-logo-main { font-family: var(--font-syne); font-weight: 900; font-size: 6.2rem; line-height: 0.88; text-transform: uppercase; color: transparent; background: linear-gradient(135deg, #0ea5d7, #4f46e5); -webkit-background-clip: text; transform-origin: left center; transform: scaleX(1.22); letter-spacing: -0.02em; }
+.footer-logo-sub { font-family: var(--font-syne); font-weight: 900; font-size: 1.9rem; letter-spacing: .36em; text-transform: uppercase; color: var(--slate); margin-top: 8px; }
+.footer-logo-tag { display: flex; align-items: center; gap: 1rem; color: var(--slate); font-style: italic; font-weight: 700; font-size: 1.05rem; margin-top: 10px; }
 .footer-logo-tag::before, .footer-logo-tag::after { content: ""; height: 3px; flex: 1; background: linear-gradient(90deg, transparent, #0ea5d7, transparent); border-radius: 2px; }
 
+@media (max-width: 1100px) {
+  .footer-logo-main { font-size: 5.2rem; transform: scaleX(1.15); }
+  .footer-logo-sub { font-size: 1.6rem; }
+  .footer-logo-tag { font-size: 0.98rem; }
+}
+
 @media (max-width: 900px) {
-  .footer-logo-main { font-size: 3rem; transform: scaleX(1.08); }
-  .footer-logo-sub { font-size: .95rem; }
+  .footer-logo-main { font-size: 3.6rem; transform: scaleX(1.08); }
+  .footer-logo-sub { font-size: 1.05rem; }
 }
 
 @media (max-width: 420px) {
-  .footer-logo-main { font-size: 2.1rem; transform: scaleX(1); }
+  .footer-logo-main { font-size: 2.2rem; transform: scaleX(1); }
   .footer-logo-sub { font-size: .82rem; letter-spacing: .18em; }
   .footer-logo-tag { justify-content: center; }
 }
