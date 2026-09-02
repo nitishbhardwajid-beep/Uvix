@@ -60,11 +60,10 @@ export default function SiteLayout({ children, title, description }) {
         <div className="footer-grid">
           <div className="footer-brand">
             <Link className="nav-logo" href="/">
-                <div className="footer-logo-text">
-                  <div className="footer-logo-main">UVIX</div>
-                  <div className="footer-logo-sub">TECHNOLOGIES</div>
-                  <div className="footer-logo-tag">Ideas to Innovation</div>
-                </div>
+                <span className="site-logo-text footer-logo-text">
+                  <span className="site-logo-main site-logo-header">UVIX</span>
+                  <span className="site-logo-sub site-logo-header-sub">TECHNOLOGIES</span>
+                </span>
             </Link>
             <p>AI engineering and cloud services focused on measurable outcomes. Bangalore · Germany.</p>
           </div>
