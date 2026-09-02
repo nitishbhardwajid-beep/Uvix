@@ -65,7 +65,17 @@ export default function SiteLayout({ children, title, description }) {
         <div className="footer-grid">
           <div className="footer-brand">
             <Link className="nav-logo" href="/">
-              <img src="/uvix-logo-compact.svg" alt="Uvix Technologies" className="footer-logo" />
+              {logoVisible ? (
+                <img
+                  src={themeLight ? '/uvix-logo-dark.svg' : '/uvix-logo.svg'}
+                  alt="Uvix Technologies"
+                  className="footer-logo"
+                  onError={() => setLogoVisible(false)}
+                  srcSet={`/uvix-logo.png 1x, /uvix-logo@2x.png 2x, /uvix-logo@3x.png 3x`}
+                />
+              ) : (
+                <img src="/uvix-logo-compact.svg" alt="Uvix Technologies" className="footer-logo" />
+              )}
             </Link>
             <p>AI engineering and cloud services focused on measurable outcomes. Bangalore · Germany.</p>
           </div>
