@@ -29,15 +29,7 @@ export default function SiteLayout({ children, title, description }) {
     <>
       <nav>
         <Link className="nav-logo" href="/">
-          {logoVisible ? (
-            <>
-              <img src={themeLight ? '/uvix-logo-dark.svg' : '/uvix-logo.svg'} alt="Uvix Technologies" className="site-logo logo-full" onError={() => setLogoVisible(false)} srcSet={`/uvix-logo.png 1x, /uvix-logo@2x.png 2x, /uvix-logo@3x.png 3x`} />
-              <img src="/uvix-logo-compact.svg" alt="Uvix" className="site-logo logo-compact" onError={() => {}} srcSet={`/uvix-logo-compact.png 1x, /uvix-logo-compact@2x.png 2x, /uvix-logo-compact@3x.png 3x`} />
-              <img src="/uvix-logo-stacked.svg" alt="Uvix Technologies" className="site-logo logo-stacked" onError={() => {}} srcSet={`/uvix-logo-stacked.png 1x, /uvix-logo-stacked@2x.png 2x, /uvix-logo-stacked@3x.png 3x`} />
-            </>
-          ) : (
-            'Uvix Technologies'
-          )}
+          <span className="site-logo-text">Uvix <span className="site-logo-sub">Technologies</span></span>
         </Link>
         <div className="nav-actions">
           <button className="theme-toggle" aria-label="Toggle theme" onClick={() => setThemeLight((s) => !s)}>
@@ -65,17 +57,7 @@ export default function SiteLayout({ children, title, description }) {
         <div className="footer-grid">
           <div className="footer-brand">
             <Link className="nav-logo" href="/">
-              {logoVisible ? (
-                <img
-                  src={themeLight ? '/uvix-logo-dark.svg' : '/uvix-logo.svg'}
-                  alt="Uvix Technologies"
-                  className="footer-logo"
-                  onError={() => setLogoVisible(false)}
-                  srcSet={`/uvix-logo.png 1x, /uvix-logo@2x.png 2x, /uvix-logo@3x.png 3x`}
-                />
-              ) : (
-                <img src="/uvix-logo-compact.svg" alt="Uvix Technologies" className="footer-logo" />
-              )}
+                <span className="footer-logo-text">Uvix <span className="site-logo-sub">Technologies</span></span>
             </Link>
             <p>AI engineering and cloud services focused on measurable outcomes. Bangalore · Germany.</p>
           </div>

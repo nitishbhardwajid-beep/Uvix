@@ -102,6 +102,10 @@ nav { flex-wrap: nowrap; }
   letter-spacing: -0.02em; background: linear-gradient(135deg, var(--cyan), var(--indigo-l));
   -webkit-background-clip: text; -webkit-text-fill-color: transparent; text-decoration: none;
 }
+/* Simple text logo used as a safe fallback when image assets fail in deployment */
+.site-logo-text { font-family: var(--font-syne); font-weight: 800; font-size: 1.35rem; letter-spacing: -0.02em; color: var(--white); display: inline-block; }
+.site-logo-sub { display: block; font-size: .55rem; font-weight: 700; letter-spacing: .18em; color: var(--slate); margin-top: 2px; }
+.footer-logo-text { font-family: var(--font-syne); font-weight: 800; font-size: 1.1rem; color: var(--white); display: inline-block; }
   .site-logo { height: 36px; display: inline-block; }
   .logo-compact { display: none; height: 36px; }
   .logo-stacked { display: none; height: 44px; }
