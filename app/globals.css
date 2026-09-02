@@ -16,6 +16,10 @@
   --focus-outline: rgba(99,102,241,0.25);
 }
 
+/* Import brand fonts: Montserrat, Oxanium, Space Grotesk */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&family=Oxanium:wght@600;700;800&family=Space+Grotesk:wght@400;600&display=swap');
+
+
   /* Light theme overrides (white mode) */
   .theme-light {
     --navy: #ffffff;
@@ -111,20 +115,20 @@ nav { flex-wrap: nowrap; }
   -webkit-background-clip: text; -webkit-text-fill-color: transparent; text-decoration: none;
 }
 /* Simple text logo used as a safe fallback when image assets fail in deployment */
-.site-logo-text { font-family: var(--font-syne); display: inline-flex; flex-direction: column; gap: 2px; align-items: flex-start; line-height: 1; }
-.site-logo-main { font-weight: 900; font-size: 1.6rem; color: transparent; background: linear-gradient(135deg, var(--cyan), var(--indigo-l)); -webkit-background-clip: text; background-clip: text; }
-.site-logo-sub { display: block; font-size: .6rem; font-weight: 800; letter-spacing: .26em; color: var(--slate); margin-top: 0; text-transform: uppercase; }
+.site-logo-text { font-family: 'Montserrat', var(--font-syne), sans-serif; display: inline-flex; flex-direction: column; gap: 2px; align-items: flex-start; line-height: 1; }
+.site-logo-main { font-family: 'Oxanium', 'Montserrat', var(--font-syne), sans-serif; font-weight: 800; font-size: 1.8rem; color: transparent; background: linear-gradient(135deg, #1EA1FF 0%, #0066FF 100%); -webkit-background-clip: text; background-clip: text; text-transform: uppercase; letter-spacing: -0.02em; }
+.site-logo-sub { display: block; font-family: 'Space Grotesk', 'Montserrat', var(--font-syne), sans-serif; font-size: .7rem; font-weight: 700; letter-spacing: .42em; color: var(--slate); margin-top: 0; text-transform: uppercase; }
 .site-logo-tag { font-size: .78rem; font-weight: 600; color: var(--slate); font-style: italic; margin-top: 2px; }
-.footer-logo-text { font-family: var(--font-syne); font-weight: 800; font-size: 1.05rem; color: var(--white); display: flex; flex-direction: column; gap: 6px; align-items: flex-start; }
+.footer-logo-text { font-family: 'Montserrat', var(--font-syne), sans-serif; font-weight: 800; font-size: 1.05rem; color: var(--white); display: flex; flex-direction: column; gap: 6px; align-items: flex-start; }
 
 /* Header compact uppercase logo */
-.site-logo-header { font-size: 1.5rem; letter-spacing: 0.02em; background: linear-gradient(135deg, var(--cyan), var(--indigo-l)); -webkit-background-clip: text; color: transparent; }
-.site-logo-header-sub { font-size: .75rem; color: var(--slate); -webkit-text-fill-color: unset; }
+.site-logo-header { font-size: 1.6rem; letter-spacing: 0.02em; background: linear-gradient(135deg, #1EA1FF 0%, #0066FF 100%); -webkit-background-clip: text; color: transparent; }
+.site-logo-header-sub { font-size: .78rem; color: var(--slate); -webkit-text-fill-color: unset; }
 
 /* Footer large stretched logo */
-.footer-logo-main { font-family: var(--font-syne); font-weight: 900; font-size: 6.2rem; line-height: 0.88; text-transform: uppercase; color: transparent; background: linear-gradient(135deg, #0ea5d7, #4f46e5); -webkit-background-clip: text; transform-origin: left center; transform: scaleX(1.22); letter-spacing: -0.02em; }
-.footer-logo-sub { font-family: var(--font-syne); font-weight: 900; font-size: 1.9rem; letter-spacing: .36em; text-transform: uppercase; color: var(--slate); margin-top: 8px; }
-.footer-logo-tag { display: flex; align-items: center; gap: 1rem; color: var(--slate); font-style: italic; font-weight: 700; font-size: 1.05rem; margin-top: 10px; }
+.footer-logo-main { font-family: 'Oxanium', 'Montserrat', var(--font-syne), sans-serif; font-weight: 800; font-size: 5.2rem; line-height: 0.92; text-transform: uppercase; color: transparent; background: linear-gradient(135deg, #1EA1FF 0%, #0066FF 100%); -webkit-background-clip: text; transform-origin: left center; letter-spacing: -0.02em; }
+.footer-logo-sub { font-family: 'Space Grotesk', 'Montserrat', var(--font-syne), sans-serif; font-weight: 700; font-size: 1.45rem; letter-spacing: .42em; text-transform: uppercase; color: var(--slate); margin-top: 6px; }
+.footer-logo-tag { display: flex; align-items: center; gap: 1rem; color: var(--slate); font-style: italic; font-weight: 600; font-size: 0.96rem; margin-top: 8px; }
 .footer-logo-tag::before, .footer-logo-tag::after { content: ""; height: 3px; flex: 1; background: linear-gradient(90deg, transparent, #0ea5d7, transparent); border-radius: 2px; }
 
 @media (max-width: 1100px) {
