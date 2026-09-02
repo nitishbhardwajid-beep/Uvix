@@ -2,7 +2,6 @@
 import Link from 'next/link';
 import { navItems } from '../data/siteContent';
 import { useState, useEffect } from 'react';
-import Logo from './Logo';
 
 export default function SiteLayout({ children, title, description }) {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -30,7 +29,10 @@ export default function SiteLayout({ children, title, description }) {
     <>
       <nav>
         <Link className="nav-logo" href="/">
-          <Logo size="compact" />
+          <span className="site-logo-text">
+            <span className="site-logo-main site-logo-header">UVIX</span>
+            <span className="site-logo-sub site-logo-header-sub">TECHNOLOGIES</span>
+          </span>
         </Link>
         <div className="nav-actions">
           <button className="theme-toggle" aria-label="Toggle theme" onClick={() => setThemeLight((s) => !s)}>
@@ -58,7 +60,10 @@ export default function SiteLayout({ children, title, description }) {
         <div className="footer-grid">
           <div className="footer-brand">
             <Link className="nav-logo" href="/">
-                <Logo size="large" variant={themeLight ? 'default' : 'boxed'} />
+                <span className="site-logo-text footer-logo-text">
+                  <span className="site-logo-main site-logo-header">UVIX</span>
+                  <span className="site-logo-sub site-logo-header-sub">TECHNOLOGIES</span>
+                </span>
             </Link>
             <p>AI engineering and cloud services focused on measurable outcomes. Bangalore · Germany.</p>
           </div>
