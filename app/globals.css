@@ -61,7 +61,7 @@
   .theme-light .nav-links.mobile-open {
     background: var(--navy-2) !important;
     border-color: rgba(11,18,32,0.04) !important;
-    color: var(--white) !important;
+    color: var(--slate) !important;
   }
 
   .theme-light .stack-highlight-card,
