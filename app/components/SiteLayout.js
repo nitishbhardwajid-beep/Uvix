@@ -29,7 +29,11 @@ export default function SiteLayout({ children, title, description }) {
     <>
       <nav>
         <Link className="nav-logo" href="/">
-          <span className="site-logo-text">Uvix <span className="site-logo-sub">Technologies</span></span>
+          <span className="site-logo-text">
+            <span className="site-logo-main">Uvix</span>
+            <span className="site-logo-sub">TECHNOLOGIES</span>
+            <span className="site-logo-tag">— Ideas to Innovation —</span>
+          </span>
         </Link>
         <div className="nav-actions">
           <button className="theme-toggle" aria-label="Toggle theme" onClick={() => setThemeLight((s) => !s)}>
@@ -57,7 +61,11 @@ export default function SiteLayout({ children, title, description }) {
         <div className="footer-grid">
           <div className="footer-brand">
             <Link className="nav-logo" href="/">
-                <span className="footer-logo-text">Uvix <span className="site-logo-sub">Technologies</span></span>
+                <span className="footer-logo-text">
+                  <span className="site-logo-main">Uvix</span>
+                  <span className="site-logo-sub">TECHNOLOGIES</span>
+                  <span className="site-logo-tag">— Ideas to Innovation —</span>
+                </span>
             </Link>
             <p>AI engineering and cloud services focused on measurable outcomes. Bangalore · Germany.</p>
           </div>
