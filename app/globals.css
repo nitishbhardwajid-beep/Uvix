@@ -78,6 +78,14 @@
 
   .theme-light .btn-ghost:hover { border-color: rgba(11,18,32,0.08); background: rgba(11,18,32,0.03); }
 
+  /* Ensure hero stat numbers are readable in light theme (remove translucent gradient text) */
+  .theme-light .stat-num {
+    background: none !important;
+    -webkit-background-clip: unset !important;
+    -webkit-text-fill-color: unset !important;
+    color: var(--white) !important;
+  }
+
 * { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; }
 body {
