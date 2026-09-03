@@ -1,6 +1,7 @@
 import './globals.css';
 import { Inter, Syne } from 'next/font/google';
 import { siteMeta, contactDetails } from './shared/content';
+ 
 
 const inter = Inter({
   subsets: ['latin'],
@@ -52,8 +53,8 @@ export default function RootLayout({ children }) {
         <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
         <meta name="apple-mobile-web-app-title" content="Uvix" />
         <meta httpEquiv="x-ua-compatible" content="IE=edge" />
-        <link rel="apple-touch-icon" href="/icon-192.png" />
-        <link rel="icon" type="image/png" href="/favicon.png" />
+        <link rel="apple-touch-icon" href="/uvix-logo.svg" />
+        <link rel="icon" href="/uvix-logo.svg" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{

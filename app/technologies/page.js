@@ -9,7 +9,7 @@ export default function TechnologiesPage() {
   return (
     <SiteLayout>
       <PageSection
-        eyebrow="Technologies"
+        eyebrow={<span className="brand-tech">TECHNOLOGIES</span>}
         title="The tooling stack behind modern AI products"
         intro="We select the best fit for your problem, balancing speed, reliability, and future scale."
       >

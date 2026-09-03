@@ -11,7 +11,7 @@ export default function CustomContactPage() {
         title="Contact Us"
         intro="We will get in touch with you shortly."
       >
-        <div className="contact-layout" style={{ display: 'grid', gridTemplateColumns: '1fr 420px', gap: '2rem', alignItems: 'start' }}>
+        <div className="contact-layout">
           <div>
             <ContactForm />
           </div>

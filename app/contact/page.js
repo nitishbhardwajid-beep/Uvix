@@ -15,7 +15,7 @@ export default function ContactPage() {
         title="Let’s shape the next phase of your platform"
         intro="Share your challenge and we will propose the right path forward — from strategy to delivery."
       >
-        <div className="contact-layout" style={{ display: 'grid', gridTemplateColumns: '1fr 420px', gap: '2rem', alignItems: 'start' }}>
+        <div className="contact-layout">
           <div className="contact-card">
             <p>Reach us at <a href={`mailto:${contactDetails.email}`}>{contactDetails.email}</a> for a discovery conversation.</p>
             <p style={{ marginTop: '0.5rem' }}><strong>Phone:</strong> <a href={`tel:${contactDetails.phone}`}>{contactDetails.phone}</a></p>

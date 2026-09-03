@@ -5,20 +5,18 @@ import { useState, useEffect } from 'react';
 
 export default function SiteLayout({ children, title, description }) {
   const [mobileOpen, setMobileOpen] = useState(false);
-  const [themeLight, setThemeLight] = useState(false);
-  const [logoVisible, setLogoVisible] = useState(true);
-
-  useEffect(() => {
+  const [themeLight, setThemeLight] = useState(() => {
     try {
+      if (typeof window === 'undefined') return false;
       const stored = localStorage.getItem('uvix_theme_light');
-      const isLight = stored === '1';
-      setThemeLight(isLight);
-      if (isLight) document.documentElement.classList.add('theme-light');
-      else document.documentElement.classList.remove('theme-light');
-    } catch (e) {}
-  }, []);
-
+      return stored === '1';
+    } catch (e) {
+      return false;
+    }
+  });
+  const [logoVisible, setLogoVisible] = useState(true);
   useEffect(() => {
+    // ensure DOM class matches current state on mount and when theme changes
     try {
       localStorage.setItem('uvix_theme_light', themeLight ? '1' : '0');
       if (themeLight) document.documentElement.classList.add('theme-light');
@@ -35,7 +33,21 @@ export default function SiteLayout({ children, title, description }) {
           </span>
         </Link>
         <div className="nav-actions">
-          <button className="theme-toggle" aria-label="Toggle theme" onClick={() => setThemeLight((s) => !s)}>
+          <button
+            className="theme-toggle"
+            aria-label="Toggle theme"
+            onClick={() => {
+              setThemeLight((prev) => {
+                const next = !prev;
+                try {
+                  localStorage.setItem('uvix_theme_light', next ? '1' : '0');
+                  if (next) document.documentElement.classList.add('theme-light');
+                  else document.documentElement.classList.remove('theme-light');
+                } catch (e) {}
+                return next;
+              });
+            }}
+          >
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M12 3v2" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/><path d="M12 19v2" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/><path d="M3 12h2" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/><path d="M19 12h2" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/><path d="M4.2 4.2l1.4 1.4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/><path d="M18.4 18.4l1.4 1.4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/><path d="M18.4 5.6l1.4-1.4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/><path d="M4.2 19.8l1.4-1.4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/><circle cx="12" cy="12" r="3" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg>
             <span className="sr-only">Toggle theme</span>
           </button>
