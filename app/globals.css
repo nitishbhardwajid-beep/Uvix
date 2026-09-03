@@ -472,6 +472,38 @@ footer { background: var(--navy); border-top: 1px solid var(--border); padding: 
   text-rendering: geometricPrecision;
 }
 
+/* Improve mobile text selection for contact/address (scoped) */
+.contact-card ::selection {
+  background: rgba(6,182,212,0.18);
+  color: inherit;
+}
+.contact-card ::-moz-selection {
+  background: rgba(6,182,212,0.18);
+  color: inherit;
+}
+
+.contact-card p,
+.contact-card address,
+.contact-card a {
+  background: none !important;
+  position: relative;
+  z-index: 1;
+  line-height: 1.6;
+  -webkit-background-clip: initial !important;
+  -webkit-text-fill-color: unset !important;
+  user-select: text;
+  -webkit-user-select: text;
+}
+
+.contact-card * {
+  -webkit-background-clip: initial !important;
+}
+
+.contact-card::before,
+.contact-card::after {
+  pointer-events: none;
+}
+
 @media (min-width: 900px) {
   .brand-tech { font-size: clamp(1rem, 2vw, 1.2rem); letter-spacing: 0.34em; }
 }
